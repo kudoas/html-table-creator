@@ -1,0 +1,11 @@
+# unnecessary
+.DS_Store
+.vscode
+node_modules
+
+# build
+dist
+
+# Logs
+yarn-debug.log*
+yarn-error.log*
