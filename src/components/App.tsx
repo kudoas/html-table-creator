@@ -4,6 +4,7 @@ import { Context } from './Context';
 import Header from './Header';
 import Input from './Input';
 import Output from './Output';
+import Footer from './Footer';
 
 const App: React.FCX = ({ className }) => {
   const context: any = useContext(Context);
@@ -16,7 +17,7 @@ const App: React.FCX = ({ className }) => {
         <Input />
         <Output />
       </main>
-      <footer>© kudoa</footer>
+      <Footer />
     </React.Fragment>
   );
 };
