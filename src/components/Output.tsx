@@ -8,16 +8,12 @@ import { Context } from './Context';
 const renderTable = (tableItem: string) => {
   const context: any = useContext(Context);
 
-  let arr = [];
-  for (let i = 0; i < context.row; i++) {
-    arr.push(i);
-  }
-
   // prettier-ignore
+  // ${arr.map(a => `<td>${tableItem}</td>`)}
   return html`
     <table>
       <tr>
-        ${arr.map(a => `<td>${tableItem}</td>`)}
+        ${context.tableItems.map((item:string) => `<td>${item}</td>`)}
       </tr>
     </table>
   `;
@@ -28,8 +24,8 @@ const renderHtml: React.FCX = ({ className }) => {
   const context: any = useContext(Context);
   return (
     <React.Fragment>
-      <pre className={className}>{renderTable(context.text)}</pre>
-      <CopyToClipboard text={renderTable(context.text)} onCopy={() => setIsCopied(true)}>
+      <pre className={className}>{renderTable(context.tableItems)}</pre>
+      <CopyToClipboard text={renderTable(context.tableItems)} onCopy={() => setIsCopied(true)}>
         <button>Copy to Clipboard</button>
       </CopyToClipboard>
       {isCopied ? <div>Copied!</div> : null}
