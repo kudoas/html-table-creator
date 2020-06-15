@@ -6,33 +6,50 @@ const Provider: React.FC = (props) => {
   // will support dark mode
   // const [mode, setMode] = useState(['white', 'dark']);
 
-  const [tableItems, setTableItems] = useState(['']);
+  const [tableItems, setTableItems] = useState([['']]);
   const [row, setRow] = useState(1);
   const [column, setColumn] = useState(1);
   const [text, setText] = useState('');
 
-  const onInput = (e: React.FormEvent<HTMLInputElement>, key: number): void => {
+  const onInput = (e: React.FormEvent<HTMLInputElement>, column: number, row: number): void => {
     const tableItem = e.currentTarget.value;
-    tableItems[key] = tableItem;
+    tableItems[column][row] = tableItem;
     setText(tableItem);
   };
 
-  const addRow = (): void => {
+  const addColumn = (): void => {
     let nextTableItems = tableItems.concat();
-    nextTableItems.push('');
+    for (let i = 0; i < tableItems.length; i++) {
+      nextTableItems[i].push('');
+    }
     setTableItems(nextTableItems);
-    setColumn(column + 1);
   };
 
   // can't update state, tableItems
-  const removeRow = (): void => {
-    let nextTableItems = tableItems.concat().slice(0, tableItems.length - 1);
+  const removeColumn = (): void => {
+    let nextTableItems = tableItems.concat();
+    for (let i = 0; i < tableItems.length; i++) {
+      nextTableItems[i].pop();
+    }
     setTableItems(nextTableItems);
-    setColumn(column - 1);
   };
 
   // addRow, removeRow
-  // ...
+  const addRow = (): void => {
+    const lengthOfTableColumn = tableItems.concat()[0].length;
+    let nextTableItems = tableItems.concat();
+    let initialArr = [];
+    for (let i = 0; i < lengthOfTableColumn; i++) {
+      initialArr.push('');
+    }
+    nextTableItems.push(initialArr);
+    setTableItems(nextTableItems);
+  };
+
+  const removeRow = (): void => {
+    const nextTableItems = tableItems.concat().slice(0, tableItems.length - 1);
+    setTableItems(nextTableItems);
+  };
 
   return (
     <Context.Provider
@@ -43,6 +60,8 @@ const Provider: React.FC = (props) => {
         column: column,
         tableItems: tableItems,
         onInput: onInput,
+        addColumn: addColumn,
+        removeColumn: removeColumn,
         addRow: addRow,
         removeRow: removeRow,
       }}
