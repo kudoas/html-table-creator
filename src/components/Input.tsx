@@ -1,7 +1,44 @@
 import React, { useState, useContext } from 'react';
 
 import { Context } from './Context';
-import { NamedChunksPlugin } from 'webpack';
+
+type Props = {
+  arg1: any;
+  column: any;
+};
+
+const Comp1: React.FCX<Props> = (props) => {
+  const context: any = useContext(Context);
+  const { arg1, column } = props;
+  return (
+    <div>
+      {arg1[0].map((i: any) => (
+        <input key={i} onInput={(e) => context.onInput(e, column, i)} />
+      ))}
+    </div>
+  );
+};
+
+type Props1 = {
+  arg1: any;
+};
+
+const Comp2: React.FCX<Props1> = (props) => {
+  const context: any = useContext(Context);
+  const { arg1 } = props;
+
+  let keys = [];
+  for (let i = 0; i < context.tableItems.length; i++) {
+    keys.push(i);
+  }
+  return (
+    <div>
+      {keys.map((k: number) => (
+        <Comp1 key={k} column={k} arg1={arg1} />
+      ))}
+    </div>
+  );
+};
 
 const Input: React.FCX = () => {
   const context: any = useContext(Context);
@@ -21,14 +58,12 @@ const Input: React.FCX = () => {
   for (let i = 0; i < keys.length; i++) {
     items.push(
       keys[i].map((key) => (
-        <React.Fragment>
-          <input
-            key={String(key)}
-            name="table-item"
-            placeholder="Table Item"
-            onInput={(e) => context.onInput(e, i, key)}
-          />
-        </React.Fragment>
+        <input
+          key={key.toString()}
+          name="table-item"
+          placeholder="Table Item"
+          onInput={(e) => context.onInput(e, i, key)}
+        />
       )),
     );
   }
@@ -37,13 +72,17 @@ const Input: React.FCX = () => {
   return (
     <React.Fragment>
       {/* <input name="table-item" placeholder="Table Item" onInput={(e) => context.onInput(e, 0)} /> */}
-      {items}
       <button onClick={context.addColumn}>Add Column</button>
-      {context.tableItems.length > 1 ? (
+      {context.tableItems[0].length > 1 ? (
         <button onClick={context.removeColumn}>Remove Column</button>
       ) : null}
       <button onClick={context.addRow}>Add Row</button>
-      <button onClick={context.removeRow}>Remove Row</button>
+      {context.tableItems.length > 1 ? (
+        <button onClick={context.removeRow}>Remove Row</button>
+      ) : null}
+      <br />
+      {/* {items} */}
+      <Comp2 arg1={keys} />
     </React.Fragment>
   );
 };
