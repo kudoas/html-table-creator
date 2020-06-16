@@ -9,6 +9,7 @@ type Props = {
 
 const Comp1: React.FCX<Props> = (props) => {
   const context: any = useContext(Context);
+  console.log('context', context);
   const { arg1, column } = props;
   return (
     <div>

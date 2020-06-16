@@ -30,22 +30,16 @@ const renderTable = (arg: any) => {
   // prettier-ignore
   return html`
     <table>
-      ${arg.map(Tr)}
+      ${arg.map(columnsAndRows)}
     </table>
   `;
 };
 
-const Tr = (arg: []) => {
+const columnsAndRows = (arg: []) => {
   // prettier-ignore
   return html`
-  <tr>${arg.map(Td)}</tr>`;
-};
-
-const Td = (arg: any) => {
-  // prettier-ignore
-  return html`
-    <td>${arg}</td>
-  `
+    <tr>${arg.map((a:string)=> `<td>${a}</td>`)}</tr>
+  `;
 };
 
 // これも上手くいかない！

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 const Footer: React.FCX = ({ className }) => {
   return (
-    <footer>
+    <footer className={className}>
       <p>©︎ kudoa</p>
       <ul>
         <li>

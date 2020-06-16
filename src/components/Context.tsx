@@ -2,6 +2,8 @@ import React, { useState, createContext } from 'react';
 
 const Context = createContext({});
 
+Context.Provider;
+
 const Provider: React.FC = (props) => {
   // will support dark mode
   // const [mode, setMode] = useState(['white', 'dark']);
@@ -56,8 +58,8 @@ const Provider: React.FC = (props) => {
       value={{
         // mode: mode,
         text: text,
-        row: row,
-        column: column,
+        // row: row,
+        // column: column,
         tableItems: tableItems,
         onInput: onInput,
         addColumn: addColumn,
