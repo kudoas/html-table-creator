@@ -1,22 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { Context } from './Context';
+import { GlobalCSS, ResetCSS } from '../styles';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
-// import HtmlSample from './PracticeHtml';
-
-const App: React.FCX = ({ className }) => {
-  // const context: any = useContext(Context);
-
+const App: React.FC = () => {
   return (
-    <React.Fragment>
+    <>
+      <ResetCSS />
+      <GlobalCSS />
       <Header />
       <Main />
       <Footer />
-      {/* <HtmlSample /> */}
-    </React.Fragment>
+    </>
   );
 };
 

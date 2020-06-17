@@ -2,6 +2,8 @@ import React, { useState, createContext } from 'react';
 
 const Context = createContext({});
 
+Context.Provider;
+
 const Provider: React.FC = (props) => {
   // will support dark mode
   // const [mode, setMode] = useState(['white', 'dark']);
@@ -25,7 +27,6 @@ const Provider: React.FC = (props) => {
     setTableItems(nextTableItems);
   };
 
-  // can't update state, tableItems
   const removeColumn = (): void => {
     let nextTableItems = tableItems.concat();
     for (let i = 0; i < tableItems.length; i++) {
@@ -34,7 +35,6 @@ const Provider: React.FC = (props) => {
     setTableItems(nextTableItems);
   };
 
-  // addRow, removeRow
   const addRow = (): void => {
     const lengthOfTableColumn = tableItems.concat()[0].length;
     let nextTableItems = tableItems.concat();
@@ -51,19 +51,30 @@ const Provider: React.FC = (props) => {
     setTableItems(nextTableItems);
   };
 
+  const resetTable = (): void => {
+    let nextTableItems = tableItems.concat();
+    for (let i = 0; i < nextTableItems.length; i++) {
+      for (let j = 0; j < nextTableItems[0].length; j++) {
+        nextTableItems[i][j] = '';
+      }
+    }
+    setTableItems(nextTableItems);
+  };
+
   return (
     <Context.Provider
       value={{
         // mode: mode,
         text: text,
-        row: row,
-        column: column,
+        // row: row,
+        // column: column,
         tableItems: tableItems,
         onInput: onInput,
         addColumn: addColumn,
         removeColumn: removeColumn,
         addRow: addRow,
         removeRow: removeRow,
+        resetTable: resetTable,
       }}
     >
       {props.children}

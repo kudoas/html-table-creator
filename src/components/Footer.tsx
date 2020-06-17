@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 const Footer: React.FCX = ({ className }) => {
   return (
-    <footer>
+    <footer className={className}>
       <p>©︎ kudoa</p>
       <ul>
         <li>
@@ -22,4 +22,18 @@ const Footer: React.FCX = ({ className }) => {
   );
 };
 
-export default Footer;
+const StyledFooter = styled(Footer)`
+  p {
+    text-align: center;
+  }
+  ul {
+    text-align: center;
+    li {
+      display: inline-block;
+      letter-spacing: 0.5px;
+      margin: 10px;
+    }
+  }
+`;
+
+export default StyledFooter;
