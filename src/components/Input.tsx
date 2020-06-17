@@ -3,8 +3,8 @@ import React, { useState, useContext } from 'react';
 import { Context } from './Context';
 
 type Props = {
-  arg1: any;
-  column: any;
+  arg1: [[]];
+  column: number;
 };
 
 const Comp1: React.FCX<Props> = (props) => {
@@ -14,7 +14,12 @@ const Comp1: React.FCX<Props> = (props) => {
   return (
     <div>
       {arg1[0].map((i: any) => (
-        <input key={i} onInput={(e) => context.onInput(e, column, i)} />
+        <input
+          key={i}
+          type="text"
+          value={context.tableItems[column][i]}
+          onChange={(e) => context.onInput(e, column, i)}
+        />
       ))}
     </div>
   );
@@ -55,23 +60,8 @@ const Input: React.FCX = () => {
   }
   console.log('keys', keys);
 
-  let items: any = [];
-  for (let i = 0; i < keys.length; i++) {
-    items.push(
-      keys[i].map((key) => (
-        <input
-          key={key.toString()}
-          name="table-item"
-          placeholder="Table Item"
-          onInput={(e) => context.onInput(e, i, key)}
-        />
-      )),
-    );
-  }
-  console.log('items', items);
-
   return (
-    <React.Fragment>
+    <>
       {/* <input name="table-item" placeholder="Table Item" onInput={(e) => context.onInput(e, 0)} /> */}
       <button onClick={context.addColumn}>Add Column</button>
       {context.tableItems[0].length > 1 ? (
@@ -82,9 +72,9 @@ const Input: React.FCX = () => {
         <button onClick={context.removeRow}>Remove Row</button>
       ) : null}
       <br />
-      {/* {items} */}
+      <button onClick={context.resetTable}>Reset</button>
       <Comp2 arg1={keys} />
-    </React.Fragment>
+    </>
   );
 };
 

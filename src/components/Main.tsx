@@ -14,4 +14,10 @@ const Main: React.FCX = ({ className }) => {
   );
 };
 
-export default Main;
+const StyledMain = styled(Main)`
+  h2 {
+    text-align: center;
+  }
+`;
+
+export default StyledMain;

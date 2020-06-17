@@ -9,7 +9,12 @@ export const GlobalCSS = () => (
       html {
         font-size: 62.5%;
         body {
+          color: #09090f;
           font-family: 'Patrick Hand', cursive;
+          font-size: 1.6em;
+          a {
+            text-decoration: none;
+          }
         }
       }
     `}

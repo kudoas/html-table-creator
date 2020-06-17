@@ -27,7 +27,6 @@ const Provider: React.FC = (props) => {
     setTableItems(nextTableItems);
   };
 
-  // can't update state, tableItems
   const removeColumn = (): void => {
     let nextTableItems = tableItems.concat();
     for (let i = 0; i < tableItems.length; i++) {
@@ -36,7 +35,6 @@ const Provider: React.FC = (props) => {
     setTableItems(nextTableItems);
   };
 
-  // addRow, removeRow
   const addRow = (): void => {
     const lengthOfTableColumn = tableItems.concat()[0].length;
     let nextTableItems = tableItems.concat();
@@ -53,6 +51,16 @@ const Provider: React.FC = (props) => {
     setTableItems(nextTableItems);
   };
 
+  const resetTable = (): void => {
+    let nextTableItems = tableItems.concat();
+    for (let i = 0; i < nextTableItems.length; i++) {
+      for (let j = 0; j < nextTableItems[0].length; j++) {
+        nextTableItems[i][j] = '';
+      }
+    }
+    setTableItems(nextTableItems);
+  };
+
   return (
     <Context.Provider
       value={{
@@ -66,6 +74,7 @@ const Provider: React.FC = (props) => {
         removeColumn: removeColumn,
         addRow: addRow,
         removeRow: removeRow,
+        resetTable: resetTable,
       }}
     >
       {props.children}
