@@ -2,8 +2,6 @@ import React, { useState, createContext } from 'react';
 
 const Context = createContext({});
 
-Context.Provider;
-
 const Provider: React.FC = (props) => {
   // will support dark mode
   // const [mode, setMode] = useState(['white', 'dark']);
