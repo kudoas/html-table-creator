@@ -1,5 +1,8 @@
 import React, { useState, useContext } from 'react';
+import styled from '@emotion/styled';
 
+import Button from './Button';
+// import ResetModal from './Modal';
 import { Context } from './Context';
 
 type Props = {
@@ -7,7 +10,7 @@ type Props = {
   column: number;
 };
 
-const Comp1: React.FCX<Props> = (props) => {
+const ColumnForms: React.FCX<Props> = (props) => {
   const context: any = useContext(Context);
   console.log('context', context);
   const { arg1, column } = props;
@@ -29,7 +32,7 @@ type Props1 = {
   arg1: any;
 };
 
-const Comp2: React.FCX<Props1> = (props) => {
+const ColumnAndRowForms: React.FCX<Props1> = (props) => {
   const context: any = useContext(Context);
   const { arg1 } = props;
 
@@ -40,15 +43,14 @@ const Comp2: React.FCX<Props1> = (props) => {
   return (
     <div>
       {keys.map((k: number) => (
-        <Comp1 key={k} column={k} arg1={arg1} />
+        <ColumnForms key={k} column={k} arg1={arg1} />
       ))}
     </div>
   );
 };
 
-const Input: React.FCX = () => {
+const Input: React.FCX = ({ className }) => {
   const context: any = useContext(Context);
-  console.log(context.tableItems);
 
   let keys = [];
   for (let i = 0; i < context.tableItems.length; i++) {
@@ -58,24 +60,43 @@ const Input: React.FCX = () => {
     }
     keys.push(arr);
   }
-  console.log('keys', keys);
 
   return (
-    <>
-      {/* <input name="table-item" placeholder="Table Item" onInput={(e) => context.onInput(e, 0)} /> */}
-      <button onClick={context.addColumn}>Add Column</button>
-      {context.tableItems[0].length > 1 ? (
-        <button onClick={context.removeColumn}>Remove Column</button>
-      ) : null}
-      <button onClick={context.addRow}>Add Row</button>
-      {context.tableItems.length > 1 ? (
-        <button onClick={context.removeRow}>Remove Row</button>
-      ) : null}
+    <div className={className}>
+      <Button onClick={context.addColumn}>
+        Add Column <i className="fas fa-plus"></i>
+      </Button>
+      <Button onClick={context.addRow}>
+        Add Row <i className="fas fa-plus"></i>
+      </Button>
+      <Button onClick={context.removeColumn} isOne={context.tableItems[0].length <= 1}>
+        Remove Column <i className="fas fa-trash-alt"></i>
+      </Button>
+      <Button onClick={context.removeRow} isOne={context.tableItems.length <= 1}>
+        Remove Row <i className="fas fa-trash-alt"></i>
+      </Button>
       <br />
-      <button onClick={context.resetTable}>Reset</button>
-      <Comp2 arg1={keys} />
-    </>
+      <Button onClick={context.deleteAllItems}>
+        Delete All Items <i className="fas fa-trash-alt"></i>
+      </Button>
+      <Button onClick={context.resetTable}>
+        Reset Table <i className="fas fa-undo"></i>
+      </Button>
+      <ColumnAndRowForms arg1={keys} />
+      {/* <ResetModal /> */}
+    </div>
   );
 };
 
-export default Input;
+const StyledInput = styled(Input)`
+  text-align: center;
+  margin: 10px;
+  input {
+    background-color: #e0e5ec;
+    box-shadow: 2px 2px 10px #ffffff, -2px -2px 10px #a3b1c6;
+    padding: 8px;
+    margin: 10px;
+  }
+`;
+
+export default StyledInput;

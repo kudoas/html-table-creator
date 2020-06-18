@@ -7,7 +7,7 @@ import Output from './Output';
 const Main: React.FCX = ({ className }) => {
   return (
     <main className={className}>
-      <h2>Create your Table, INPUT & OUTPUT</h2>
+      <h2>Create your table</h2>
       <Input />
       <Output />
     </main>
@@ -16,8 +16,15 @@ const Main: React.FCX = ({ className }) => {
 
 const StyledMain = styled(Main)`
   h2 {
+    font-size: 3.4rem;
     text-align: center;
   }
 `;
+
+// #b5ddd1
+// #d7e7a9
+// #d3c0f9
+// #f99a9c
+// #fdbccf
 
 export default StyledMain;

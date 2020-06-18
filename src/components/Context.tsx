@@ -2,8 +2,6 @@ import React, { useState, createContext } from 'react';
 
 const Context = createContext({});
 
-Context.Provider;
-
 const Provider: React.FC = (props) => {
   // will support dark mode
   // const [mode, setMode] = useState(['white', 'dark']);
@@ -51,7 +49,7 @@ const Provider: React.FC = (props) => {
     setTableItems(nextTableItems);
   };
 
-  const resetTable = (): void => {
+  const deleteAllItems = (): void => {
     let nextTableItems = tableItems.concat();
     for (let i = 0; i < nextTableItems.length; i++) {
       for (let j = 0; j < nextTableItems[0].length; j++) {
@@ -59,6 +57,10 @@ const Provider: React.FC = (props) => {
       }
     }
     setTableItems(nextTableItems);
+  };
+
+  const resetTable = (): void => {
+    setTableItems([['']]);
   };
 
   return (
@@ -74,6 +76,7 @@ const Provider: React.FC = (props) => {
         removeColumn: removeColumn,
         addRow: addRow,
         removeRow: removeRow,
+        deleteAllItems: deleteAllItems,
         resetTable: resetTable,
       }}
     >
