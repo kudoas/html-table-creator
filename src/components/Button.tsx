@@ -3,12 +3,13 @@ import styled from '@emotion/styled';
 
 type Props = {
   onClick: () => void;
+  isOne?: boolean;
 };
 
 const Button: React.FCX<Props> = (props) => {
-  const { className, children, onClick } = props;
+  const { className, children, onClick, isOne } = props;
   return (
-    <button onClick={onClick} className={className}>
+    <button onClick={onClick} className={className} disabled={isOne}>
       {children}
     </button>
   );
@@ -23,6 +24,13 @@ const StyledButton = styled(Button)`
   color: black;
   &:hover {
     color: white;
+  }
+  :disabled {
+    background: #ccc;
+    box-shadow: 1px 1px 5px #ffffff, -1px -1px 5px #a3b1c6;
+    color: #ffffff;
+    cursor: not-allowed;
+    border: #ccc;
   }
 `;
 

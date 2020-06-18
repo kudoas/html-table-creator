@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import styled from '@emotion/styled';
 
 import Button from './Button';
+// import ResetModal from './Modal';
 import { Context } from './Context';
 
 type Props = {
@@ -65,24 +66,24 @@ const Input: React.FCX = ({ className }) => {
       <Button onClick={context.addColumn}>
         Add Column <i className="fas fa-plus"></i>
       </Button>
-      {context.tableItems[0].length > 1 ? (
-        <Button onClick={context.removeColumn}>
-          Remove Column <i className="fas fa-trash-alt"></i>
-        </Button>
-      ) : null}
       <Button onClick={context.addRow}>
         Add Row <i className="fas fa-plus"></i>
       </Button>
-      {context.tableItems.length > 1 ? (
-        <Button onClick={context.removeRow}>
-          Remove Row <i className="fas fa-trash-alt"></i>
-        </Button>
-      ) : null}
+      <Button onClick={context.removeColumn} isOne={context.tableItems[0].length <= 1}>
+        Remove Column <i className="fas fa-trash-alt"></i>
+      </Button>
+      <Button onClick={context.removeRow} isOne={context.tableItems.length <= 1}>
+        Remove Row <i className="fas fa-trash-alt"></i>
+      </Button>
       <br />
+      <Button onClick={context.deleteAllItems}>
+        Delete All Items <i className="fas fa-trash-alt"></i>
+      </Button>
       <Button onClick={context.resetTable}>
-        Reset <i className="fas fa-undo"></i>
+        Reset Table <i className="fas fa-undo"></i>
       </Button>
       <ColumnAndRowForms arg1={keys} />
+      {/* <ResetModal /> */}
     </div>
   );
 };
