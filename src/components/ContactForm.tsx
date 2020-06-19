@@ -1,41 +1,101 @@
-import React from 'react';
+import React, { useState } from 'react';
+import styled from '@emotion/styled';
+
+import Header from './Header';
+import Footer from './Footer';
+import Button from './Button';
 
 // netlify form sample https://docs.netlify.com/forms/setup/#html-forms
 const ContactForm: React.FCX = ({ className }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMassage] = useState('');
+  const [isTouched, setTouched] = useState(false);
+
+  const nameHandler = (e: any) => {
+    setName(e.target.value);
+  };
+
+  const emailHandler = (e: any) => {
+    setEmail(e.target.value);
+  };
+
+  const messageHandler = (e: any) => {
+    setMassage(e.target.value);
+    setTouched(true);
+  };
+
   return (
     <>
-      <h2>Contact Form</h2>
-      <form name="contact" method="POST" data-netlify="true">
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Role:{' '}
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message"></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
+      <Header />
+      <main className={className}>
+        <h2>Contact Form</h2>
+        <form name="contact" method="POST" data-netlify="true">
+          <p>
+            <label>
+              Your Name:{' '}
+              <input onChange={(e) => nameHandler(e)} value={name} type="text" name="name" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Email:{' '}
+              <input onChange={(e) => emailHandler(e)} value={email} type="email" name="email" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Message:{' '}
+              <textarea
+                name="message"
+                onChange={(e) => messageHandler(e)}
+                value={message}
+              ></textarea>
+            </label>
+          </p>
+          <p>
+            <Button type="submit" isOne={!isTouched}>
+              Send
+            </Button>
+          </p>
+        </form>
+      </main>
+      <Footer />
     </>
   );
 };
 
-export default ContactForm;
+const StyledContactForm = styled(ContactForm)`
+  text-align: center;
+  form {
+    margin: 10px;
+    p {
+      margin: 20px;
+      label {
+        font-size: 1.2em;
+        input,
+        textarea {
+          border-radius: 5px;
+          padding: 5px;
+          background-color: #e0e5ec;
+          box-shadow: 2px 2px 10px #ffffff, -2px -2px 10px #a3b1c6;
+        }
+        textarea {
+          width: 500px;
+          height: 200px;
+        }
+      }
+    }
+  }
+  button {
+    background-color: #b5ddd1;
+  }
+`;
+
+// #b5ddd1
+// #d7e7a9
+// #d3c0f9
+// #f99a9c
+// #fdbccf
+
+export default StyledContactForm;

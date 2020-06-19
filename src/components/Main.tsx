@@ -14,12 +14,7 @@ const Main: React.FCX = ({ className }) => {
   );
 };
 
-const StyledMain = styled(Main)`
-  h2 {
-    font-size: 3.4rem;
-    text-align: center;
-  }
-`;
+const StyledMain = styled(Main)``;
 
 // #b5ddd1
 // #d7e7a9

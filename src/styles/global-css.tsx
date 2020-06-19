@@ -15,6 +15,10 @@ export const GlobalCSS = () => (
           margin: 0 auto;
           max-width: 1152px;
           background-color: #d7e7a9;
+          h2 {
+            font-size: 3.4rem;
+            text-align: center;
+          }
           a {
             text-decoration: none;
           }

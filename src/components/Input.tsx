@@ -12,7 +12,6 @@ type Props = {
 
 const ColumnForms: React.FCX<Props> = (props) => {
   const context: any = useContext(Context);
-  console.log('context', context);
   const { arg1, column } = props;
   return (
     <div>
@@ -94,6 +93,7 @@ const StyledInput = styled(Input)`
   input {
     background-color: #e0e5ec;
     box-shadow: 2px 2px 10px #ffffff, -2px -2px 10px #a3b1c6;
+    border-radius: 5px;
     padding: 8px;
     margin: 10px;
   }

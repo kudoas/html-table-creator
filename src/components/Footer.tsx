@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import {
   FacebookShareButton,
@@ -31,7 +32,7 @@ const Footer: React.FCX = ({ className }) => {
       </ul>
       <ul>
         <li>
-          <a href="#">Contact</a>
+          <Link to="/contact">Contact</Link>
         </li>
         <li>
           <a href="https://github.com/Kudoas/html-table-creator">
@@ -50,6 +51,7 @@ const Footer: React.FCX = ({ className }) => {
 const StyledFooter = styled(Footer)`
   p {
     text-align: center;
+    margin-bottom: 20px;
   }
   ul {
     text-align: center;

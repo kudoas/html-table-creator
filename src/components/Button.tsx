@@ -2,14 +2,15 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 type Props = {
-  onClick: () => void;
+  onClick?: () => void;
   isOne?: boolean;
+  type?: any;
 };
 
 const Button: React.FCX<Props> = (props) => {
-  const { className, children, onClick, isOne } = props;
+  const { className, children, onClick, isOne, type } = props;
   return (
-    <button onClick={onClick} className={className} disabled={isOne}>
+    <button onClick={onClick} className={className} disabled={isOne} type={type}>
       {children}
     </button>
   );

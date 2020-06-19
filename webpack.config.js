@@ -1,15 +1,16 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  entry: "./src/index.tsx",
+  mode: 'development',
+  entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   devServer: {
-    port: "3030",
+    historyApiFallback: true,
+    port: '3030',
     hot: true,
     open: true,
   },
@@ -20,26 +21,26 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-              presets: [["@babel/preset-env", "@emotion/babel-preset-css-prop"]],
+              presets: [['@babel/preset-env', '@emotion/babel-preset-css-prop']],
             },
           },
         ],
       },
       {
         test: /\.ts(x?)$/,
-        loader: "ts-loader",
+        loader: 'ts-loader',
         exclude: /node_modules/,
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: './src/index.html',
     }),
   ],
   resolve: {
-    extensions: [".js", ".ts", ".tsx"],
+    extensions: ['.js', '.ts', '.tsx'],
   },
 };
