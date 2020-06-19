@@ -15,17 +15,17 @@ const Footer: React.FCX = ({ className }) => {
     <footer className={className}>
       <ul>
         <li>
-          <FacebookShareButton url={'#'}>
+          <FacebookShareButton url={'https://html-table-creator.netlify.app/'}>
             <FacebookIcon size={32} round={true} />
           </FacebookShareButton>
         </li>
         <li>
-          <TwitterShareButton url={'#'}>
+          <TwitterShareButton url={'https://html-table-creator.netlify.app/'}>
             <TwitterIcon size={32} round={true} />
           </TwitterShareButton>
         </li>
         <li>
-          <LineShareButton url={'#'}>
+          <LineShareButton url={'https://html-table-creator.netlify.app/'}>
             <LineIcon size={32} round={true} />
           </LineShareButton>
         </li>
