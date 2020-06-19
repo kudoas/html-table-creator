@@ -29,7 +29,7 @@ const ContactForm: React.FCX = ({ className }) => {
       <Header />
       <main className={className}>
         <h2>Contact Form</h2>
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" method="POST">
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <label>
