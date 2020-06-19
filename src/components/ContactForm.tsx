@@ -5,7 +5,6 @@ import Header from './Header';
 import Footer from './Footer';
 import Button from './Button';
 
-// netlify form sample https://docs.netlify.com/forms/setup/#html-forms
 const ContactForm: React.FCX = ({ className }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -31,6 +30,7 @@ const ContactForm: React.FCX = ({ className }) => {
       <main className={className}>
         <h2>Contact Form</h2>
         <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <p>
             <label>
               Your Name:{' '}
