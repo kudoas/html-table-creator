@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
-import Header from './Header';
-import Footer from './Footer';
-import Button from './Button';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Button from '../components/Button';
 
 const ContactForm: React.FCX = ({ className }) => {
   const [name, setName] = useState('');
@@ -11,12 +11,12 @@ const ContactForm: React.FCX = ({ className }) => {
   const [message, setMassage] = useState('');
   const [isTouched, setTouched] = useState(false);
 
-  const nameHandler = (e: any) => {
-    setName(e.target.value);
+  const nameHandler = (e: React.FormEvent<HTMLInputElement>) => {
+    setName(e.currentTarget.value);
   };
 
-  const emailHandler = (e: any) => {
-    setEmail(e.target.value);
+  const emailHandler = (e: React.FormEvent<HTMLInputElement>) => {
+    setEmail(e.currentTarget.value);
   };
 
   const messageHandler = (e: any) => {
@@ -29,7 +29,7 @@ const ContactForm: React.FCX = ({ className }) => {
       <Header />
       <main className={className}>
         <h2>Contact Form</h2>
-        <form name="contact" method="POST">
+        <form name="contact" method="POST" action="/">
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <label>

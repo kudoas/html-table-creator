@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { GlobalCSS, ResetCSS } from './styles';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import Home from './components/Home';
-import Contact from './components/ContactForm';
+import Home from './Pages/Home';
+import Contact from './Pages/Contact';
 import { Provider } from './components/Context';
 
 ReactDOM.render(

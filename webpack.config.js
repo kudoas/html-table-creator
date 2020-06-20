@@ -33,6 +33,13 @@ module.exports = {
         loader: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(ico|png|jpg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        },
+      },
     ],
   },
   plugins: [

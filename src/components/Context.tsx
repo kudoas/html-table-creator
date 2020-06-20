@@ -7,8 +7,6 @@ const Provider: React.FC = (props) => {
   // const [mode, setMode] = useState(['white', 'dark']);
 
   const [tableItems, setTableItems] = useState([['']]);
-  const [row, setRow] = useState(1);
-  const [column, setColumn] = useState(1);
   const [text, setText] = useState('');
 
   const onInput = (e: React.FormEvent<HTMLInputElement>, column: number, row: number): void => {
@@ -66,10 +64,7 @@ const Provider: React.FC = (props) => {
   return (
     <Context.Provider
       value={{
-        // mode: mode,
         text: text,
-        // row: row,
-        // column: column,
         tableItems: tableItems,
         onInput: onInput,
         addColumn: addColumn,

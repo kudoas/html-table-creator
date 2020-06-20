@@ -25,6 +25,7 @@
     "@types/react-share": "^3.0.3",
     "babel-loader": "^8.1.0",
     "common-tags": "^1.8.0",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "path": "^0.12.7",
     "react": "^16.13.1",
