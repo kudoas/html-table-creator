@@ -7,6 +7,12 @@ import Home from './Pages/Home';
 import Contact from './Pages/Contact';
 import { Provider } from './components/Context';
 
+// assets
+import './assets/img/favicon.ico';
+import './assets/img/favicon-16×16.png';
+import './assets/img/favicon-32×32.png';
+import './assets/img/html-table-creator.png';
+
 ReactDOM.render(
   <Provider>
     <ResetCSS />

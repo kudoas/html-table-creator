@@ -10,9 +10,10 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+    // contentBase: path.join(__dirname, '/public'),
     port: '3030',
     hot: true,
-    open: true,
+    open: false,
   },
   module: {
     rules: [
@@ -44,7 +45,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: 'src/index.html',
     }),
   ],
   resolve: {
