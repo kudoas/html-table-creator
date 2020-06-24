@@ -32,7 +32,9 @@ const Footer: React.FCX = ({ className }) => {
       </ul>
       <ul>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">
+            Contact <i className="far fa-envelope"></i>
+          </Link>
         </li>
         <li>
           <a href="https://github.com/Kudoas/html-table-creator">
@@ -40,10 +42,14 @@ const Footer: React.FCX = ({ className }) => {
           </a>
         </li>
         <li>
-          <a href="#">Help</a>
+          <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/table">
+            What is &lt;table&gt;?
+          </a>
         </li>
       </ul>
-      <p>©︎ kudoa</p>
+      <p>
+        <a href="https://twitter.com/kudoadd">©︎ kudoa</a>
+      </p>
     </footer>
   );
 };

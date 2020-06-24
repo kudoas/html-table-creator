@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled from '@emotion/styled';
 
 import Button from './Button';
@@ -6,12 +6,12 @@ import Button from './Button';
 import { Context } from './Context';
 
 type Props = {
-  arg1: [[]];
+  arg1: number[][];
   column: number;
 };
 
 const ColumnForms: React.FCX<Props> = (props) => {
-  const context: any = useContext(Context);
+  const context = useContext(Context);
   const { arg1, column } = props;
   return (
     <div>
@@ -28,11 +28,11 @@ const ColumnForms: React.FCX<Props> = (props) => {
 };
 
 type Props1 = {
-  arg1: any;
+  arg1: number[][];
 };
 
 const ColumnAndRowForms: React.FCX<Props1> = (props) => {
-  const context: any = useContext(Context);
+  const context = useContext(Context);
   const { arg1 } = props;
 
   let keys = [];
@@ -49,7 +49,7 @@ const ColumnAndRowForms: React.FCX<Props1> = (props) => {
 };
 
 const Input: React.FCX = ({ className }) => {
-  const context: any = useContext(Context);
+  const context = useContext(Context);
 
   let keys = [];
   for (let i = 0; i < context.tableItems.length; i++) {
