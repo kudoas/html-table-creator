@@ -1,6 +1,18 @@
 import React, { useState, createContext } from 'react';
 
-const Context = createContext({});
+interface ContextTypes {
+  text: string;
+  tableItems: string[][];
+  onInput: (e: React.FormEvent<HTMLInputElement>, column: number, row: number) => void;
+  addColumn: () => void;
+  removeColumn: () => void;
+  addRow: () => void;
+  removeRow: () => void;
+  deleteAllItems: () => void;
+  resetTable: () => void;
+}
+
+const Context = createContext({} as ContextTypes);
 
 const Provider: React.FC = (props) => {
   // will support dark mode

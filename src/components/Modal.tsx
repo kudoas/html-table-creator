@@ -19,7 +19,7 @@ const customStyles = {
 Modal.setAppElement('#app');
 
 const ResetModal: React.FCX = ({ className }) => {
-  const context: any = useContext(Context);
+  const context = useContext(Context);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const openModal = (): void => {

@@ -24,7 +24,7 @@ const columnsAndRows = (arg: []) => {
 
 const renderHtml: React.FCX = ({ className }) => {
   const [isCopied, setIsCopied] = useState(false);
-  const context: any = useContext(Context);
+  const context = useContext(Context);
 
   let rowKeys = [];
   for (let i = 0; i < context.tableItems.length; i++) {

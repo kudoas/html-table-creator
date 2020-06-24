@@ -19,8 +19,8 @@ const ContactForm: React.FCX = ({ className }) => {
     setEmail(e.currentTarget.value);
   };
 
-  const messageHandler = (e: any) => {
-    setMassage(e.target.value);
+  const messageHandler = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    setMassage(e.currentTarget.value);
     setTouched(true);
   };
 
