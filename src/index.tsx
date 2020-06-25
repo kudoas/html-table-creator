@@ -14,18 +14,16 @@ import './assets/img/favicon-32×32.png';
 import './assets/img/html-table-creator.png';
 
 ReactDOM.render(
-  <>
+  <Provider>
     <ResetCSS />
     <GlobalCSS />
     <Router>
       <Switch>
-        <Provider>
-          <Route exact path="/" component={Home} />
-        </Provider>
+        <Route exact path="/" component={Home} />
         <Route path="/contact" component={Contact} />
         <Redirect to="/" />
       </Switch>
     </Router>
-  </>,
+  </Provider>,
   document.getElementById('app'),
 );
