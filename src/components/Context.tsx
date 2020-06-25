@@ -28,43 +28,37 @@ const Provider: React.FC = (props) => {
   };
 
   const addColumn = (): void => {
-    let nextTableItems = tableItems.concat();
-    for (let i = 0; i < tableItems.length; i++) {
-      nextTableItems[i].push('');
+    let nextTableItems = [...tableItems];
+    for (const nextTableItem of nextTableItems) {
+      nextTableItem.push('');
     }
     setTableItems(nextTableItems);
   };
 
   const removeColumn = (): void => {
-    let nextTableItems = tableItems.concat();
-    for (let i = 0; i < tableItems.length; i++) {
-      nextTableItems[i].pop();
+    let nextTableItems = [...tableItems];
+    for (const nextTableItem of nextTableItems) {
+      nextTableItem.pop();
     }
     setTableItems(nextTableItems);
   };
 
   const addRow = (): void => {
-    const lengthOfTableColumn = tableItems.concat()[0].length;
-    let nextTableItems = tableItems.concat();
-    let initialArr = [];
-    for (let i = 0; i < lengthOfTableColumn; i++) {
-      initialArr.push('');
-    }
+    let nextTableItems = [...tableItems];
+    const initialArr = new Array(nextTableItems[0].length).fill('');
     nextTableItems.push(initialArr);
     setTableItems(nextTableItems);
   };
 
   const removeRow = (): void => {
-    const nextTableItems = tableItems.concat().slice(0, tableItems.length - 1);
+    const nextTableItems = [...tableItems].slice(0, tableItems.length - 1);
     setTableItems(nextTableItems);
   };
 
   const deleteAllItems = (): void => {
-    let nextTableItems = tableItems.concat();
-    for (let i = 0; i < nextTableItems.length; i++) {
-      for (let j = 0; j < nextTableItems[0].length; j++) {
-        nextTableItems[i][j] = '';
-      }
+    let nextTableItems = [...tableItems];
+    for (const nextTableItem of nextTableItems) {
+      nextTableItem.fill('');
     }
     setTableItems(nextTableItems);
   };

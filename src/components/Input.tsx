@@ -5,17 +5,17 @@ import Button from './Button';
 // import ResetModal from './Modal';
 import { Context } from './Context';
 
-type Props = {
-  arg1: number[][];
+type ColumnTypes = {
+  arr2d: number[][];
   column: number;
 };
 
-const ColumnForms: React.FCX<Props> = (props) => {
+const ColumnForms: React.FCX<ColumnTypes> = (props) => {
   const context = useContext(Context);
-  const { arg1, column } = props;
+  const { arr2d, column } = props;
   return (
     <div>
-      {arg1[0].map((i: any) => (
+      {arr2d[0].map((i: any) => (
         <input
           key={i}
           type="text"
@@ -27,22 +27,22 @@ const ColumnForms: React.FCX<Props> = (props) => {
   );
 };
 
-type Props1 = {
-  arg1: number[][];
+type ColumnAndRowType = {
+  arr2d: number[][];
 };
 
-const ColumnAndRowForms: React.FCX<Props1> = (props) => {
+const ColumnAndRowForms: React.FCX<ColumnAndRowType> = (props) => {
   const context = useContext(Context);
-  const { arg1 } = props;
+  const { arr2d } = props;
 
   let keys = [];
-  for (let i = 0; i < context.tableItems.length; i++) {
-    keys.push(i);
+  for (let i in context.tableItems) {
+    keys.push(Number(i));
   }
   return (
     <div>
       {keys.map((k: number) => (
-        <ColumnForms key={k} column={k} arg1={arg1} />
+        <ColumnForms key={k} column={k} arr2d={arr2d} />
       ))}
     </div>
   );
@@ -51,11 +51,12 @@ const ColumnAndRowForms: React.FCX<Props1> = (props) => {
 const Input: React.FCX = ({ className }) => {
   const context = useContext(Context);
 
+  // generate input key
   let keys = [];
-  for (let i = 0; i < context.tableItems.length; i++) {
+  for (const tableItem of context.tableItems) {
     let arr = [];
-    for (let j = 0; j < context.tableItems[0].length; j++) {
-      arr.push(j);
+    for (let i in tableItem) {
+      arr.push(Number(i));
     }
     keys.push(arr);
   }
@@ -81,7 +82,7 @@ const Input: React.FCX = ({ className }) => {
       <Button onClick={context.resetTable}>
         Reset Table <i className="fas fa-undo"></i>
       </Button>
-      <ColumnAndRowForms arg1={keys} />
+      <ColumnAndRowForms arr2d={keys} />
       {/* <ResetModal /> */}
     </div>
   );
