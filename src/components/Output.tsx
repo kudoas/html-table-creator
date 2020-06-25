@@ -6,19 +6,19 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { Context } from './Context';
 
 // Referred to issue#160 https://github.com/zspecza/common-tags/issues/160
-const renderTable = (arg: any) => {
+const renderTable = (arr2d: string[][]) => {
   // prettier-ignore
   return html`
     <table>
-      ${arg.map(columnsAndRows)}
+      ${arr2d.map(columnsAndRows)}
     </table>
   `;
 };
 
-const columnsAndRows = (arg: []) => {
+const columnsAndRows = (arr: []) => {
   // prettier-ignore
   return html`
-    <tr>${arg.map((a:string)=> `<td>${a}</td>`)}</tr>
+    <tr>${arr.map((a:string)=> `<td>${a}</td>`)}</tr>
   `;
 };
 
@@ -27,8 +27,8 @@ const renderHtml: React.FCX = ({ className }) => {
   const context = useContext(Context);
 
   let rowKeys = [];
-  for (let i = 0; i < context.tableItems.length; i++) {
-    rowKeys.push(i);
+  for (let i in context.tableItems) {
+    rowKeys.push(Number(i));
   }
 
   return (
