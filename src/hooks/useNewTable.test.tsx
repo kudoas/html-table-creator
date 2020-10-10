@@ -10,27 +10,35 @@ describe('useNewTable', () => {
     expect(result.current.state).toStrictEqual([['']]);
   });
 
-  it('add and remove row', () => {
+  it('add row', () => {
     const { result } = renderHook(() => useNewTable());
     act(() => {
       result.current.addRow();
     });
     expect(result.current.state).toStrictEqual([[''], ['']]);
+  });
 
+  it('remove row', () => {
+    const { result } = renderHook(() => useNewTable());
     act(() => {
+      result.current.addRow();
       result.current.removeRow();
     });
     expect(result.current.state).toStrictEqual([['']]);
   });
 
-  it('add and remove column', () => {
+  it('add column', () => {
     const { result } = renderHook(() => useNewTable());
     act(() => {
       result.current.addColumn();
     });
     expect(result.current.state).toStrictEqual([['', '']]);
+  });
 
+  it('remove column', () => {
+    const { result } = renderHook(() => useNewTable());
     act(() => {
+      result.current.addColumn();
       result.current.removeColumn();
     });
     expect(result.current.state).toStrictEqual([['']]);
@@ -44,5 +52,24 @@ describe('useNewTable', () => {
       result.current.reset();
     });
     expect(result.current.state).toStrictEqual([['']]);
+  });
+
+  it('onChange', () => {
+    const { result } = renderHook(() => useNewTable());
+    act(() => {
+      result.current.addColumn();
+      result.current.addRow();
+    });
+    const { container } = render(
+      <input type="text" onChange={(e) => result.current.onChange(e, 1, 1)} />,
+    );
+    const input = container.querySelector('input');
+    act(() => {
+      fireEvent.change(input!, { target: { value: 'cell 2-2' } });
+    });
+    expect(result.current.state).toStrictEqual([
+      ['', ''],
+      ['', 'cell 2-2'],
+    ]);
   });
 });

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export default function TableForm() {
   const [state, setState] = useState([['']]);
 
-  const onInput = (e: React.FormEvent<HTMLInputElement>, column: number, row: number) => {
+  const onChange = (e: React.FormEvent<HTMLInputElement>, column: number, row: number) => {
     const tableItem = e.currentTarget.value;
     const updateState = [...state];
     updateState[column][row] = tableItem;
@@ -34,7 +34,7 @@ export default function TableForm() {
   };
 
   const removeRow = () => {
-    const updateState = [...state].slice(0, state.length - 1);
+    const updateState = [...state].slice(0, state.length);
     setState(updateState);
   };
 
@@ -52,7 +52,7 @@ export default function TableForm() {
 
   return {
     state,
-    onInput,
+    onChange,
     addColumn,
     removeColumn,
     addRow,
