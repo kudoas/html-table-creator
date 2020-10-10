@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { GlobalCSS, ResetCSS } from './styles';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
+import { GlobalCSS, ResetCSS } from './styles';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import { Provider } from './components/Context';
