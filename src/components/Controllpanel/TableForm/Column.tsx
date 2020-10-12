@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import useNewTable from '../../../hooks/useNewTable';
-
 type Props = {
   state: string[][];
   tableKeys: number[][]; // row index
@@ -10,9 +8,9 @@ type Props = {
   column: number;
 };
 
-const ColumnForms: React.FCX<Props> = ({ state, onChange, tableKeys, column }) => {
+const Component: React.FCX<Props> = ({ className, state, onChange, tableKeys, column }) => {
   return (
-    <div>
+    <div className={className}>
       {tableKeys[0].map((i) => (
         <input
           key={i}
@@ -25,4 +23,14 @@ const ColumnForms: React.FCX<Props> = ({ state, onChange, tableKeys, column }) =
   );
 };
 
-export default ColumnForms;
+const StyledComponent = styled(Component)`
+  > input {
+    background-color: #e0e5ec;
+    box-shadow: 2px 2px 10px #ffffff, -2px -2px 10px #a3b1c6;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 10px;
+  }
+`;
+
+export default StyledComponent;

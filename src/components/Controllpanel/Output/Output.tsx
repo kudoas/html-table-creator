@@ -8,7 +8,7 @@ type Props = {
   state: string[][];
 };
 
-const Component: React.FCX<Props> = ({ className, state }) => {
+const Container: React.FCX<Props> = ({ className, state }) => {
   const [isCopied, setIsCopied] = useState(false);
 
   let rowKeys = [];
@@ -28,7 +28,7 @@ const Component: React.FCX<Props> = ({ className, state }) => {
   );
 };
 
-const StyledComponent = styled(Component)`
+const StyledContainer = styled(Container)`
   pre {
     background-color: #e0e5ec;
     padding: 16px;
@@ -60,4 +60,4 @@ const StyledComponent = styled(Component)`
   } */
 `;
 
-export default StyledComponent;
+export default StyledContainer;

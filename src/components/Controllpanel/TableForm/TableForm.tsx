@@ -10,21 +10,18 @@ type Props = {
   onChange: (e: React.FormEvent<HTMLInputElement>, column: number, row: number) => void;
 };
 
-const Component: React.FC<Props> = (props) => (
-  <div>
-    {props.keys.map((k) => (
-      <Column
-        key={k}
-        column={k}
-        tableKeys={props.tableKeys}
-        onChange={props.onChange}
-        state={props.state}
-      />
+const Component: React.FCX<Props> = ({ className, keys, tableKeys, onChange, state }) => (
+  <div className={className}>
+    {keys.map((k) => (
+      <Column key={k} column={k} tableKeys={tableKeys} onChange={onChange} state={state} />
     ))}
   </div>
 );
 
-const StyledComponent = styled(Component)``;
+const StyledComponent = styled(Component)`
+  text-align: center;
+  margin: 10px;
+`;
 
 const Container: React.FCX<Props> = ({ tableKeys, onChange, state }) => {
   let keys = [];

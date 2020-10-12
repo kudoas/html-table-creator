@@ -2,19 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-const Header: React.FCX = ({ className }) => {
-  return (
-    <header className={className}>
-      <nav>
-        <h1>
-          <Link to="/">HTML Table Creator</Link>
-        </h1>
-      </nav>
-    </header>
-  );
-};
+const Component: React.FCX = ({ className }) => (
+  <header className={className}>
+    <nav>
+      <h1>
+        <Link to="/">HTML Table Creator</Link>
+      </h1>
+    </nav>
+  </header>
+);
 
-const StyledHeader = styled(Header)`
+const StyledComponent = styled(Component)`
   h1 {
     padding: 10px;
   }
@@ -23,4 +21,4 @@ const StyledHeader = styled(Header)`
   }
 `;
 
-export default StyledHeader;
+export default StyledComponent;
