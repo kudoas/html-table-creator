@@ -19,8 +19,10 @@ const Component: React.FCX<Props> = ({ className, keys, tableKeys, onChange, sta
 );
 
 const StyledComponent = styled(Component)`
-  text-align: center;
-  margin: 10px;
+  > {
+    text-align: center;
+    margin: 10px;
+  }
 `;
 
 const Container: React.FCX<Props> = ({ tableKeys, onChange, state }) => {

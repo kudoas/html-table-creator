@@ -4,26 +4,44 @@ import { generateTableId } from '../../utils/generateTableId';
 import useNewTable from '../../hooks/useNewTable';
 import ControllButtons from './ControllButtons/ControllButtons';
 import TableForm from './TableForm/TableForm';
-import Output from './Output/Output';
 
-const Container: React.FCX = () => {
-  const {
-    state,
-    onChange,
-    addColumn,
-    removeColumn,
-    addRow,
-    removeRow,
-    deleteAllItems,
-    reset,
-  } = useNewTable();
+type Props = {
+  state: string[][];
+  onChange: (e: React.FormEvent<HTMLInputElement>, column: number, row: number) => void;
+  addColumn: () => void;
+  removeColumn: () => void;
+  addRow: () => void;
+  removeRow: () => void;
+  deleteAllItems: () => void;
+  reset: () => void;
+};
+
+const Container: React.FCX<Props> = ({
+  state,
+  onChange,
+  addColumn,
+  removeColumn,
+  addRow,
+  removeRow,
+  deleteAllItems,
+  reset,
+}) => {
+  // const {
+  //   state,
+  //   onChange,
+  //   addColumn,
+  //   removeColumn,
+  //   addRow,
+  //   removeRow,
+  //   deleteAllItems,
+  //   reset,
+  // } = useNewTable();
 
   // generate input key
   let keys = generateTableId(state);
 
   return (
     <div>
-      <h2>Controll Panel</h2>
       <ControllButtons
         state={state}
         addColumn={addColumn}
@@ -34,7 +52,6 @@ const Container: React.FCX = () => {
         reset={reset}
       />
       <TableForm tableKeys={keys} onChange={onChange} state={state} />
-      <Output state={state} />
     </div>
   );
 };

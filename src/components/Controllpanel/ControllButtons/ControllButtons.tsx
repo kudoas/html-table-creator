@@ -25,25 +25,30 @@ const Container: React.FCX<Props> = ({
 }) => (
   <div className={className}>
     <h3>Buttons</h3>
-    <Button onClick={addColumn}>
-      Add Column <i className="fas fa-plus"></i>
-    </Button>
-    <Button onClick={addRow}>
-      Add Row <i className="fas fa-plus"></i>
-    </Button>
-    <Button onClick={removeColumn} isOne={state[0].length <= 1}>
-      Remove Column <i className="fas fa-trash-alt"></i>
-    </Button>
-    <Button onClick={removeRow} isOne={state.length <= 1}>
-      Remove Row <i className="fas fa-trash-alt"></i>
-    </Button>
-    <br />
-    <Button onClick={deleteAllItems}>
-      Delete All Items <i className="fas fa-trash-alt"></i>
-    </Button>
-    <Button onClick={reset}>
-      Reset Table <i className="fas fa-undo"></i>
-    </Button>
+    <div>
+      <Button onClick={addColumn}>
+        Add Column <i className="fas fa-plus"></i>
+      </Button>
+      <Button onClick={addRow}>
+        Add Row <i className="fas fa-plus"></i>
+      </Button>
+    </div>
+    <div>
+      <Button onClick={removeColumn} isOne={state[0].length <= 1}>
+        Remove Column <i className="fas fa-trash-alt"></i>
+      </Button>
+      <Button onClick={removeRow} isOne={state.length <= 1}>
+        Remove Row <i className="fas fa-trash-alt"></i>
+      </Button>
+    </div>
+    <div>
+      <Button onClick={deleteAllItems}>
+        Delete All Items <i className="fas fa-trash-alt"></i>
+      </Button>
+      <Button onClick={reset}>
+        Reset Table <i className="fas fa-undo"></i>
+      </Button>
+    </div>
   </div>
 );
 
