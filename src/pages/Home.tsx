@@ -1,14 +1,15 @@
 import React from 'react';
 
 import Header from '../components/Header';
-import Main from '../components/Main';
+import ControllPanel from '../components/Controllpanel/ControllPanel';
 import Footer from '../components/Footer';
 
 const App: React.FC = () => {
   return (
     <>
       <Header />
-      <Main />
+      <h2>Create your table</h2>
+      <ControllPanel />
       <Footer />
     </>
   );

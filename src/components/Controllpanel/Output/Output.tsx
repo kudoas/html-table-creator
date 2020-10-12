@@ -1,41 +1,26 @@
-import React, { useContext, useState } from 'react';
-import { html } from 'common-tags';
-import styled from '@emotion/styled';
+import React, { useState } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import styled from '@emotion/styled';
 
-import { Context } from './Context';
+import { renderTable } from '../../../utils/renderTable';
 
-// Referred to issue#160 https://github.com/zspecza/common-tags/issues/160
-const renderTable = (arr2d: string[][]) => {
-  // prettier-ignore
-  return html`
-    <table>
-      ${arr2d.map(columnsAndRows)}
-    </table>
-  `;
+type Props = {
+  state: string[][];
 };
 
-const columnsAndRows = (arr: []) => {
-  // prettier-ignore
-  return html`
-    <tr>${arr.map((a:string)=> `<td>${a}</td>`)}</tr>
-  `;
-};
-
-const renderHtml: React.FCX = ({ className }) => {
+const Component: React.FCX<Props> = ({ className, state }) => {
   const [isCopied, setIsCopied] = useState(false);
-  const context = useContext(Context);
 
   let rowKeys = [];
-  for (let i in context.tableItems) {
+  for (let i in state) {
     rowKeys.push(Number(i));
   }
 
   return (
     <div className={className}>
-      <pre>{renderTable(context.tableItems)}</pre>
+      <pre>{renderTable(state)}</pre>
       <div>
-        <CopyToClipboard text={renderTable(context.tableItems)} onCopy={() => setIsCopied(true)}>
+        <CopyToClipboard text={renderTable(state)} onCopy={() => setIsCopied(true)}>
           <button>{isCopied ? 'Copied' : 'Copy to Clipboard'}</button>
         </CopyToClipboard>
       </div>
@@ -43,7 +28,7 @@ const renderHtml: React.FCX = ({ className }) => {
   );
 };
 
-const StyledRenderHtml = styled(renderHtml)`
+const StyledComponent = styled(Component)`
   pre {
     background-color: #e0e5ec;
     padding: 16px;
@@ -75,4 +60,4 @@ const StyledRenderHtml = styled(renderHtml)`
   } */
 `;
 
-export default StyledRenderHtml;
+export default StyledComponent;
