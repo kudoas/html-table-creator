@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
 
-const ContactForm: React.FCX = ({ className }) => {
+const Container: React.FCX = ({ className }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMassage] = useState('');
@@ -65,7 +65,7 @@ const ContactForm: React.FCX = ({ className }) => {
   );
 };
 
-const StyledContactForm = styled(ContactForm)`
+const StyledContainer = styled(Container)`
   text-align: center;
   form {
     margin: 10px;
@@ -98,4 +98,4 @@ const StyledContactForm = styled(ContactForm)`
 // #f99a9c
 // #fdbccf
 
-export default StyledContactForm;
+export default StyledContainer;

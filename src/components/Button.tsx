@@ -7,14 +7,11 @@ type Props = {
   type?: any;
 };
 
-const Button: React.FCX<Props> = (props) => {
-  const { className, children, onClick, isOne, type } = props;
-  return (
-    <button onClick={onClick} className={className} disabled={isOne} type={type}>
-      {children}
-    </button>
-  );
-};
+const Button: React.FCX<Props> = ({ className, children, onClick, isOne, type }) => (
+  <button className={className} onClick={onClick} disabled={isOne} type={type}>
+    {children}
+  </button>
+);
 
 const StyledButton = styled(Button)`
   padding: 10px;

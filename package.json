@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
     "build": "rm -rf dist && webpack --mode production",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "Kudoa",
   "license": "MIT",
@@ -13,6 +14,7 @@
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "@material-ui/core": "^4.11.0",
     "@types/common-tags": "^1.8.0",
     "@types/react": "^16.9.51",
     "@types/react-copy-to-clipboard": "^4.3.0",

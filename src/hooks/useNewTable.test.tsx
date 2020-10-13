@@ -23,8 +23,8 @@ describe('useNewTable', () => {
     act(() => {
       result.current.addRow();
       result.current.removeRow();
+      expect(result.current.state).toStrictEqual([['']]);
     });
-    expect(result.current.state).toStrictEqual([['']]);
   });
 
   it('add column', () => {
