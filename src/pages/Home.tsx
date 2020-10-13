@@ -6,7 +6,7 @@ import ControllPanel from '../components/Controllpanel/ControllPanel';
 import Footer from '../components/Footer';
 import Output from '../components/Controllpanel/Output/Output';
 
-const App: React.FCX = ({ className }) => {
+const Container: React.FCX = ({ className }) => {
   const [isPreview, setIsPreview] = useState(false);
 
   const {
@@ -44,4 +44,4 @@ const App: React.FCX = ({ className }) => {
   );
 };
 
-export default App;
+export default Container;
