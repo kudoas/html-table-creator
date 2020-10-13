@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 
 import Button from '../../Button';
@@ -13,7 +13,7 @@ type Props = {
   reset: () => void;
 };
 
-const Container: React.FCX<Props> = ({
+const Component: React.FCX<Props> = ({
   className,
   state,
   addColumn,
@@ -32,16 +32,12 @@ const Container: React.FCX<Props> = ({
       <Button onClick={addRow}>
         Add Row <i className="fas fa-plus"></i>
       </Button>
-    </div>
-    <div>
       <Button onClick={removeColumn} isOne={state[0].length <= 1}>
         Remove Column <i className="fas fa-trash-alt"></i>
       </Button>
       <Button onClick={removeRow} isOne={state.length <= 1}>
         Remove Row <i className="fas fa-trash-alt"></i>
       </Button>
-    </div>
-    <div>
       <Button onClick={deleteAllItems}>
         Delete All Items <i className="fas fa-trash-alt"></i>
       </Button>
@@ -52,4 +48,8 @@ const Container: React.FCX<Props> = ({
   </div>
 );
 
-export default Container;
+const StyledComponent = styled(Component)`
+  text-align: center;
+`;
+
+export default StyledComponent;

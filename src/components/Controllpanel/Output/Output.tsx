@@ -29,6 +29,7 @@ const Container: React.FCX<Props> = ({ className, state }) => {
 };
 
 const StyledContainer = styled(Container)`
+  height: 500px;
   pre {
     background-color: #e0e5ec;
     padding: 16px;
@@ -36,7 +37,7 @@ const StyledContainer = styled(Container)`
     border-radius: 5px;
     height: 400px;
   }
-  div {
+  > div {
     text-align: center;
     margin: 10px 10px;
   }

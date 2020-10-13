@@ -24,6 +24,7 @@ const Component: React.FCX<Props> = ({ className, state, onChange, tableKeys, co
 };
 
 const StyledComponent = styled(Component)`
+  text-align: center;
   > input {
     background-color: #e0e5ec;
     box-shadow: 2px 2px 10px #ffffff, -2px -2px 10px #a3b1c6;

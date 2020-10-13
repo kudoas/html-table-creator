@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
 import { generateTableId } from '../../utils/generateTableId';
-import useNewTable from '../../hooks/useNewTable';
 import ControllButtons from './ControllButtons/ControllButtons';
 import TableForm from './TableForm/TableForm';
 
@@ -16,8 +16,9 @@ type Props = {
   reset: () => void;
 };
 
-const Container: React.FCX<Props> = ({
+const Component: React.FCX<Props> = ({
   state,
+  className,
   onChange,
   addColumn,
   removeColumn,
@@ -25,35 +26,23 @@ const Container: React.FCX<Props> = ({
   removeRow,
   deleteAllItems,
   reset,
-}) => {
-  // const {
-  //   state,
-  //   onChange,
-  //   addColumn,
-  //   removeColumn,
-  //   addRow,
-  //   removeRow,
-  //   deleteAllItems,
-  //   reset,
-  // } = useNewTable();
+}) => (
+  <div className={className}>
+    <ControllButtons
+      state={state}
+      addColumn={addColumn}
+      removeColumn={removeColumn}
+      addRow={addRow}
+      removeRow={removeRow}
+      deleteAllItems={deleteAllItems}
+      reset={reset}
+    />
+    <TableForm tableKeys={generateTableId(state)} onChange={onChange} state={state} />
+  </div>
+);
 
-  // generate input key
-  let keys = generateTableId(state);
+const StyledComponent = styled(Component)`
+  height: 500px;
+`;
 
-  return (
-    <div>
-      <ControllButtons
-        state={state}
-        addColumn={addColumn}
-        removeColumn={removeColumn}
-        addRow={addRow}
-        removeRow={removeRow}
-        deleteAllItems={deleteAllItems}
-        reset={reset}
-      />
-      <TableForm tableKeys={keys} onChange={onChange} state={state} />
-    </div>
-  );
-};
-
-export default Container;
+export default StyledComponent;

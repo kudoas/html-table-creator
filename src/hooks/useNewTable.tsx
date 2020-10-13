@@ -34,7 +34,7 @@ export default function TableForm() {
   };
 
   const removeRow = () => {
-    const updateState = [...state].slice(0, state.length);
+    const updateState = [...state].slice(0, state.length - 1);
     setState(updateState);
   };
 
