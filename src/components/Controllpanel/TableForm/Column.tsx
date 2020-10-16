@@ -8,20 +8,18 @@ type Props = {
   column: number;
 };
 
-const Component: React.FCX<Props> = ({ className, state, onChange, tableKeys, column }) => {
-  return (
-    <div className={className}>
-      {tableKeys[0].map((i) => (
-        <input
-          key={i}
-          type="text"
-          value={state[column][i]}
-          onChange={(e) => onChange(e, column, i)}
-        />
-      ))}
-    </div>
-  );
-};
+const Component: React.FCX<Props> = ({ className, state, onChange, tableKeys, column }) => (
+  <div className={className}>
+    {tableKeys[0].map((i) => (
+      <input
+        key={i}
+        type="text"
+        value={state[column][i]}
+        onChange={(e) => onChange(e, column, i)}
+      />
+    ))}
+  </div>
+);
 
 const StyledComponent = styled(Component)`
   text-align: center;
