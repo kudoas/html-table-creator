@@ -1,4 +1,4 @@
-# react/testing-libarary
+# Html Table Creator
 
 ![test](https://github.com/Kudoas/html-table-creator/workflows/test/badge.svg)[![Netlify Status](https://api.netlify.com/api/v1/badges/14c0f975-ca53-498c-af9a-d6fd8648dad5/deploy-status)](https://app.netlify.com/sites/html-table-creator/deploys)
 
