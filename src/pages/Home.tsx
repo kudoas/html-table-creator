@@ -3,9 +3,10 @@ import styled from '@emotion/styled';
 
 import useNewTable from '../hooks/useNewTable';
 import Header from '../components/Header';
+import Toggle from '../components/Toggle';
 import ControllPanel from '../components/Controllpanel/ControllPanel';
-import Footer from '../components/Footer';
 import Output from '../components/Controllpanel/Output/Output';
+import Footer from '../components/Footer';
 
 type Props = {
   isPreview: boolean;
@@ -36,7 +37,9 @@ const Component: React.FCX<Props> = ({
   <div className={className}>
     <Header />
     <h2>Create your table</h2>
-    <button onClick={onClick}>切り替え</button>
+    <div>
+      <Toggle checked={isPreview} onClick={onClick} />
+    </div>
     {isPreview ? (
       <Output state={state} />
     ) : (
@@ -55,7 +58,11 @@ const Component: React.FCX<Props> = ({
   </div>
 );
 
-const StyledComponent = styled(Component)``;
+const StyledComponent = styled(Component)`
+  > div {
+    text-align: left;
+  }
+`;
 
 const Container: React.FCX<Props> = () => {
   const [isPreview, setIsPreview] = useState(false);
