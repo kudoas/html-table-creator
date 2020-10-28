@@ -24,7 +24,6 @@ const Component: React.FCX<Props> = ({
   reset,
 }) => (
   <div className={className}>
-    <h3>Buttons</h3>
     <div>
       <Button onClick={addColumn}>
         Add Column <i className="fas fa-plus"></i>
