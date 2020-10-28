@@ -33,6 +33,7 @@ const StyledComponent = styled(Component)`
     box-shadow: 2px 2px 10px #ffffff, -2px -2px 10px #a3b1c6;
     border-radius: 5px;
     height: 400px;
+    user-select: all;
   }
   > div {
     text-align: center;
