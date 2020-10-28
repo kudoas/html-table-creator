@@ -12,7 +12,6 @@ type Props = {
 
 const Component: React.FCX<Props> = ({ className, state, isCopied, onCopy }) => (
   <div className={className}>
-    <h3>tableHTML</h3>
     <pre>{renderTable(state)}</pre>
     <div>
       <CopyToClipboard text={renderTable(state)} onCopy={onCopy}>
@@ -24,10 +23,13 @@ const Component: React.FCX<Props> = ({ className, state, isCopied, onCopy }) => 
 
 const StyledComponent = styled(Component)`
   height: 500px;
+  > h3 {
+    text-align: center;
+  }
   > pre {
     background-color: #e0e5ec;
     padding: 10px;
-    margin: 10px 10px;
+    margin: 10px 30px;
     box-shadow: 2px 2px 10px #ffffff, -2px -2px 10px #a3b1c6;
     border-radius: 5px;
     height: 400px;

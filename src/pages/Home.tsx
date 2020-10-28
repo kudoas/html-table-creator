@@ -36,9 +36,11 @@ const Component: React.FCX<Props> = ({
 }) => (
   <div className={className}>
     <Header />
-    <h2>Create your table</h2>
-    <div>
+    <h2>Create Your Table</h2>
+    <div className="toggle">
+      <div>Edit</div>
       <Toggle checked={isPreview} onClick={onClick} />
+      <div>Preview</div>
     </div>
     {isPreview ? (
       <Output state={state} />
@@ -59,8 +61,16 @@ const Component: React.FCX<Props> = ({
 );
 
 const StyledComponent = styled(Component)`
-  > div {
-    text-align: left;
+  > .toggle {
+    vertical-align: middle;
+    text-align: right;
+    margin: 10px 10px;
+  }
+  .toggle > div {
+    display: inline-block;
+    margin: 10px;
+    line-height: 30px;
+    font-size: 2rem;
   }
 `;
 
