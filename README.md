@@ -5,7 +5,7 @@
 フォームに入力することで誰でも簡単にHTMLの\<table>タグを作成できるWebアプリです。
 
 [https://html-table-creator.netlify.app](https://html-table-creator.netlify.app)
-![img](https://kudoa-image-store.s3-ap-northeast-1.amazonaws.com/html-table-creator.png)
+![img](https://user-images.githubusercontent.com/45157831/97384233-a3043600-1912-11eb-9af4-e3fc118b960b.png)
 
 ## 設計思想
 
