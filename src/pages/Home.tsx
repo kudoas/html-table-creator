@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 import TableContainer from '../hooks/useNewTable';
 import Header from '../components/Header';
-import Toggle from '../components/Toggle';
+import SwitchTableForm from '../components/modules/SwitchTableForm';
 import ControllPanel from '../components/Controllpanel/ControllPanel';
 import Output from '../components/Controllpanel/Output/Output';
 import Footer from '../components/Footer';
@@ -37,11 +37,7 @@ const Component: React.FCX<Props> = ({
   <div className={className}>
     <Header />
     <h2>Create Your Table</h2>
-    <div className="toggle">
-      <div>Edit</div>
-      <Toggle checked={isPreview} onClick={onClick} />
-      <div>Preview</div>
-    </div>
+    <SwitchTableForm onClick={onClick} isPreview={isPreview} />
     {isPreview ? (
       <Output state={state} />
     ) : (
