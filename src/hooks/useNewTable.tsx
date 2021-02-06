@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { createContainer } from 'unstated-next';
 
-export default function TableForm() {
+export default createContainer(function TableForm() {
   const [state, setState] = useState([['']]);
 
   const onChange = (e: React.FormEvent<HTMLInputElement>, column: number, row: number) => {
@@ -60,4 +61,4 @@ export default function TableForm() {
     deleteAllItems,
     reset,
   };
-}
+});

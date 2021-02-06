@@ -2,16 +2,16 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import useNewTable from './useNewTable';
+import TableContainer from './useNewTable';
 
 describe('useNewTable', () => {
   it('initial value', () => {
-    const { result } = renderHook(() => useNewTable());
+    const { result } = renderHook(() => TableContainer.useContainer());
     expect(result.current.state).toStrictEqual([['']]);
   });
 
   it('add row', () => {
-    const { result } = renderHook(() => useNewTable());
+    const { result } = renderHook(() => TableContainer.useContainer());
     act(() => {
       result.current.addRow();
     });
@@ -19,7 +19,7 @@ describe('useNewTable', () => {
   });
 
   it('remove row', () => {
-    const { result } = renderHook(() => useNewTable());
+    const { result } = renderHook(() => TableContainer.useContainer());
     act(() => {
       result.current.addRow();
       result.current.removeRow();
@@ -28,7 +28,7 @@ describe('useNewTable', () => {
   });
 
   it('add column', () => {
-    const { result } = renderHook(() => useNewTable());
+    const { result } = renderHook(() => TableContainer.useContainer());
     act(() => {
       result.current.addColumn();
     });
@@ -36,7 +36,7 @@ describe('useNewTable', () => {
   });
 
   it('remove column', () => {
-    const { result } = renderHook(() => useNewTable());
+    const { result } = renderHook(() => TableContainer.useContainer());
     act(() => {
       result.current.addColumn();
       result.current.removeColumn();
@@ -45,7 +45,7 @@ describe('useNewTable', () => {
   });
 
   it('reset table', () => {
-    const { result } = renderHook(() => useNewTable());
+    const { result } = renderHook(() => TableContainer.useContainer());
     act(() => {
       result.current.addColumn();
       result.current.addRow();
@@ -55,7 +55,7 @@ describe('useNewTable', () => {
   });
 
   it('onChange', () => {
-    const { result } = renderHook(() => useNewTable());
+    const { result } = renderHook(() => TableContainer.useContainer());
     act(() => {
       result.current.addColumn();
       result.current.addRow();

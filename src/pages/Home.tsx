@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
-import useNewTable from '../hooks/useNewTable';
+import TableContainer from '../hooks/useNewTable';
 import Header from '../components/Header';
 import Toggle from '../components/Toggle';
 import ControllPanel from '../components/Controllpanel/ControllPanel';
@@ -86,7 +86,7 @@ const Container: React.FCX<Props> = () => {
     removeRow,
     deleteAllItems,
     reset,
-  } = useNewTable();
+  } = TableContainer.useContainer();
 
   return (
     <StyledComponent
