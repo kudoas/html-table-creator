@@ -9,7 +9,6 @@ type Props = {
 };
 
 const Component: React.FCX<Props> = React.memo(({ className, children, onClick, isOne, type }) => {
-  console.log('button');
   return (
     <button className={className} onClick={onClick} disabled={isOne} type={type}>
       {children}
