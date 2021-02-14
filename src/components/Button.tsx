@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { SplitChunksPlugin } from 'webpack';
 
 type Props = {
   onClick?: () => void;
@@ -7,11 +8,14 @@ type Props = {
   type?: any;
 };
 
-const Component: React.FCX<Props> = ({ className, children, onClick, isOne, type }) => (
-  <button className={className} onClick={onClick} disabled={isOne} type={type}>
-    {children}
-  </button>
-);
+const Component: React.FCX<Props> = React.memo(({ className, children, onClick, isOne, type }) => {
+  console.log('button');
+  return (
+    <button className={className} onClick={onClick} disabled={isOne} type={type}>
+      {children}
+    </button>
+  );
+});
 
 const StyledComponent = styled(Component)`
   padding: 10px;
