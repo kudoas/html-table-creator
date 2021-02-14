@@ -6,12 +6,12 @@ type Props = {
   onClick: () => void;
 };
 
-const Component: React.FCX<Props> = ({ className, checked, onClick }) => (
+const Component: React.FCX<Props> = React.memo(({ className, checked, onClick }) => (
   <label className={className}>
-    <input type="checkbox" checked={checked} onClick={onClick} />
+    <input type="checkbox" defaultChecked={checked} onClick={onClick} />
     <span className="slider round"></span>
   </label>
-);
+));
 
 const StyledComponent = styled(Component)`
   position: relative;
