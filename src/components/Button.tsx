@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { SplitChunksPlugin } from 'webpack';
 
 type Props = {
   onClick?: () => void;

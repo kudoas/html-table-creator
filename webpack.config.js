@@ -6,7 +6,7 @@ module.exports = (env, argv) => {
 
   return {
     entry: './src/index.tsx',
-    devtool: IS_DEVELOPMENT ? 'source-map' : 'none',
+    devtool: IS_DEVELOPMENT ? 'source-map' : false,
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
