@@ -3,6 +3,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from '@emotion/styled';
 
 import { renderTable } from '../../../utils/renderTable';
+import { useTable } from '../../../hooks/useTable';
 
 type Props = {
   state: string[][];
@@ -52,8 +53,9 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-const Container: React.FCX<Props> = ({ state }) => {
+const Container: React.FCX = () => {
   const [isCopied, setIsCopied] = useState(false);
+  const { state } = useTable();
 
   return <StyledComponent state={state} isCopied={isCopied} onCopy={() => setIsCopied(true)} />;
 };
