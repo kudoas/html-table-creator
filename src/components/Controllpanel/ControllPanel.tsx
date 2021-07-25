@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { generateTableId } from '../../utils/generateTableId';
+import { useTable } from '../../hooks/useTable';
 import ControllButtons from './ControllButtons/ControllButtons';
 import TableForm from './TableForm/TableForm';
 
@@ -45,4 +46,22 @@ const StyledComponent = styled(Component)`
   height: 500px;
 `;
 
-export default StyledComponent;
+const Container: React.FC = () => {
+  const { state, onChange, addColumn, removeColumn, addRow, removeRow, deleteAllItems, reset } =
+    useTable();
+
+  return (
+    <StyledComponent
+      state={state}
+      onChange={onChange}
+      addColumn={addColumn}
+      removeColumn={removeColumn}
+      addRow={addRow}
+      removeRow={removeRow}
+      deleteAllItems={deleteAllItems}
+      reset={reset}
+    />
+  );
+};
+
+export default Container;

@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { createContainer } from 'unstated-next';
+import React, { useState, useCallback } from 'react';
 
-export default createContainer(function TableForm() {
+export const useProvideTable = () => {
   const [state, setState] = useState([['']]);
 
   const onChange = useCallback(
@@ -64,4 +63,4 @@ export default createContainer(function TableForm() {
     deleteAllItems,
     reset,
   };
-});
+};

@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import { GlobalCSS, ResetCSS } from './styles';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-import TableContainer from './hooks/useNewTable';
 
 // assets
 import './assets/img/favicon.ico';
@@ -19,9 +18,7 @@ ReactDOM.render(
     <GlobalCSS />
     <Router>
       <Switch>
-        <TableContainer.Provider>
-          <Route exact path="/" component={Home} />
-        </TableContainer.Provider>
+        <Route exact path="/" component={Home} />
         <Route path="/contact" component={Contact} />
         <Redirect to="/" />
       </Switch>
