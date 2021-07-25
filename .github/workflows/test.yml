@@ -30,7 +30,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: yarn --prefer-offline --frozen-lockfile
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
 
       - name: Test
         run: yarn test
