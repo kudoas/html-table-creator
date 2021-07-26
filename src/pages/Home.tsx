@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import hotkeys from 'hotkeys-js';
 
 import { TableProvider } from '../context/TableContext';
+import { hotkeyHandler } from '../utils/hotkeys';
 import Header from '../components/Header';
 import SwitchTableForm from '../components/modules/SwitchTableForm';
 import ControllPanel from '../components/Controllpanel/ControllPanel';
 import Output from '../components/Controllpanel/Output/Output';
 import Footer from '../components/Footer';
-
-hotkeys('f5', (event, handler) => {
-  // Prevent the default refresh event under WINDOWS system
-  event.preventDefault();
-  alert('you pressed F5!');
-});
 
 type Props = {
   isPreview: boolean;
@@ -48,6 +42,11 @@ const StyledComponent = styled(Component)`
 
 const Container: React.FCX<Props> = () => {
   const [isPreview, setIsPreview] = useState(false);
+  hotkeyHandler('command+e', (event, handler) => {
+    event.preventDefault();
+    setIsPreview((prevIsPreview) => !prevIsPreview);
+  });
+
   return <StyledComponent isPreview={isPreview} onClick={() => setIsPreview(!isPreview)} />;
 };
 
