@@ -2,13 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 type Props = {
-  checked: boolean;
+  readonly checked: boolean;
   onClick: () => void;
 };
 
 const Component: React.FCX<Props> = React.memo(({ className, checked, onClick }) => (
   <label className={className}>
-    <input type="checkbox" defaultChecked={checked} onClick={onClick} />
+    <input type="checkbox" defaultChecked={checked} onClick={onClick} checked={checked} />
     <span className="slider round"></span>
   </label>
 ));
