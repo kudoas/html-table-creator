@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import hotkeys from 'hotkeys-js';
 
 import { TableProvider } from '../context/TableContext';
 import Header from '../components/Header';
@@ -7,6 +8,12 @@ import SwitchTableForm from '../components/modules/SwitchTableForm';
 import ControllPanel from '../components/Controllpanel/ControllPanel';
 import Output from '../components/Controllpanel/Output/Output';
 import Footer from '../components/Footer';
+
+hotkeys('f5', (event, handler) => {
+  // Prevent the default refresh event under WINDOWS system
+  event.preventDefault();
+  alert('you pressed F5!');
+});
 
 type Props = {
   isPreview: boolean;
