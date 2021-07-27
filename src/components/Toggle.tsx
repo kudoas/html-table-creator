@@ -2,18 +2,18 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 type Props = {
-  checked: boolean;
+  readonly checked: boolean;
   onClick: () => void;
 };
 
 const Component: React.FCX<Props> = React.memo(({ className, checked, onClick }) => (
   <label className={className}>
-    <input type="checkbox" defaultChecked={checked} onClick={onClick} />
+    <input type="checkbox" onClick={onClick} checked={checked} readOnly />
     <span className="slider round"></span>
   </label>
 ));
 
-const StyledComponent = styled(Component)`
+const StyledComponent = styled(Component)<Props>`
   position: relative;
   display: inline-block;
   width: 60px;
@@ -32,7 +32,7 @@ const StyledComponent = styled(Component)`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: ${(props) => (props.checked ? '#fdbccf' : '#b5ddd1')};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }

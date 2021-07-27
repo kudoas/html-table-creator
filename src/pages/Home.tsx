@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
 import { TableProvider } from '../context/TableContext';
+import { hotkeyHandler } from '../utils/hotkeys';
 import Header from '../components/Header';
 import SwitchTableForm from '../components/modules/SwitchTableForm';
 import ControllPanel from '../components/Controllpanel/ControllPanel';
@@ -41,6 +42,11 @@ const StyledComponent = styled(Component)`
 
 const Container: React.FCX<Props> = () => {
   const [isPreview, setIsPreview] = useState(false);
+  hotkeyHandler('command+e', (event, handler) => {
+    event.preventDefault();
+    setIsPreview((prevIsPreview) => !prevIsPreview);
+  });
+
   return <StyledComponent isPreview={isPreview} onClick={() => setIsPreview(!isPreview)} />;
 };
 
