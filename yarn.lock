@@ -3944,9 +3944,9 @@ hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.1:
     react-is "^16.7.0"
 
 hotkeys-js@^3.8.7:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.10.1.tgz#0c67e72298f235c9200e421ab112d156dc81356a"
-  integrity sha512-mshqjgTqx8ee0qryHvRgZaZDxTwxam/2yTQmQlqAWS3+twnq1jsY9Yng9zB7lWq6WRrjTbTOc7knNwccXQiAjQ==
+  version "3.13.6"
+  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.13.6.tgz#75059d1157b6f6288cd715d0b889e7472c648562"
+  integrity sha512-Uw8cUXTjYDgnTaUxJTBc8E5etD8bcxjUm6Y/PEB5tBxIZu+dqTXGNQnWV+8yxdOTdlSdXjlqGeOMWu6Sm02CvA==
 
 hpack.js@^2.1.6:
   version "2.1.6"
