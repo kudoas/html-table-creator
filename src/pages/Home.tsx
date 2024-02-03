@@ -5,8 +5,8 @@ import { TableProvider } from '../context/TableContext';
 import { hotkeyHandler } from '../utils/hotkeys';
 import Header from '../components/Header';
 import SwitchTableForm from '../components/modules/SwitchTableForm';
-import ControllPanel from '../components/Controllpanel/ControllPanel';
-import Output from '../components/Controllpanel/Output/Output';
+import ControlPanel from '../components/ControlPanel/ControlPanel';
+import Output from '../components/ControlPanel/Output/Output';
 import Footer from '../components/Footer';
 
 type Props = {
@@ -20,7 +20,7 @@ const Component: React.FCX<Props> = ({ className, isPreview, onClick }) => (
       <Header />
       <h2>Create Your Table</h2>
       <SwitchTableForm onClick={onClick} isPreview={isPreview} />
-      {isPreview ? <Output /> : <ControllPanel />}
+      {isPreview ? <Output /> : <ControlPanel />}
       <Footer />
     </div>
   </TableProvider>
