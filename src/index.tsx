@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import { GlobalCSS, ResetCSS } from './styles';
 import Home from './pages/Home';
@@ -17,11 +17,11 @@ ReactDOM.render(
     <ResetCSS />
     <GlobalCSS />
     <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/contact" component={Contact} />
-        <Redirect to="/" />
-      </Switch>
+      <Routes>
+        <Route path="/" Component={Home} />
+        <Route path="/contact" Component={Contact} />
+      </Routes>
+      <Navigate replace to="/" />
     </Router>
   </>,
   document.getElementById('app'),
