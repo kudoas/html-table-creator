@@ -57,8 +57,8 @@ dependencies:
     specifier: ^5.3.4
     version: 5.3.4(react@17.0.2)
   react-share:
-    specifier: ^4.4.1
-    version: 4.4.1(react@17.0.2)
+    specifier: ^5.0.0
+    version: 5.0.3(react@17.0.2)
 
 devDependencies:
   '@babel/core':
@@ -2304,7 +2304,7 @@ packages:
     resolution: {integrity: sha512-M2CQ/6Aph5oze3Itm/t08FoI7tGxz2RWsrZv7xft7eO5PAh7U8tCrn1relbZdWUEm1aPFfMr3N0muu3UjYfP0A==}
     deprecated: This is a stub types definition. react-share provides its own type definitions, so you do not need this installed.
     dependencies:
-      react-share: 4.4.1(react@17.0.2)
+      react-share: 5.0.3(react@17.0.2)
     transitivePeerDependencies:
       - react
       - supports-color
@@ -5642,11 +5642,10 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /react-share@4.4.1(react@17.0.2):
-    resolution: {integrity: sha512-AJ9m9RiJssqvYg7MoJUc9J0D7b/liWrsfQ99ndKc5vJ4oVHHd4Fy87jBlKEQPibT40oYA3AQ/a9/oQY6/yaigw==}
-    engines: {node: '>=6.9.0', npm: '>=5.0.0'}
+  /react-share@5.0.3(react@17.0.2):
+    resolution: {integrity: sha512-8BFkzfd8zNrO6JMP4Dwrt2sTSrRGQ9bNrU3K0riAwRJe4U/Z8/ryjKuhP2jLoHsfxj38MsPuyEQiVlIHVIICvw==}
     peerDependencies:
-      react: ^16.3.0 || ^17 || ^18
+      react: ^17 || ^18
     dependencies:
       classnames: 2.5.1
       jsonp: 0.2.1
