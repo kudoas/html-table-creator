@@ -5,6 +5,7 @@ type Props = {
   onClick?: () => void;
   isOne?: boolean;
   type?: any;
+  children: React.ReactNode;
 };
 
 const Component: React.FCX<Props> = React.memo(({ className, children, onClick, isOne, type }) => {
