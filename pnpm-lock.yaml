@@ -117,10 +117,10 @@ devDependencies:
     version: 5.76.2(webpack-cli@4.10.0)
   webpack-cli:
     specifier: 4.10.0
-    version: 4.10.0(webpack-dev-server@4.13.1)(webpack@5.76.2)
+    version: 4.10.0(webpack-dev-server@4.15.1)(webpack@5.76.2)
   webpack-dev-server:
-    specifier: 4.13.1
-    version: 4.13.1(webpack-cli@4.10.0)(webpack@5.76.2)
+    specifier: 4.15.1
+    version: 4.15.1(webpack-cli@4.10.0)(webpack@5.76.2)
 
 packages:
 
@@ -2503,7 +2503,7 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       webpack: 5.76.2(webpack-cli@4.10.0)
-      webpack-cli: 4.10.0(webpack-dev-server@4.13.1)(webpack@5.76.2)
+      webpack-cli: 4.10.0(webpack-dev-server@4.15.1)(webpack@5.76.2)
     dev: true
 
   /@webpack-cli/info@1.5.0(webpack-cli@4.10.0):
@@ -2512,10 +2512,10 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       envinfo: 7.11.1
-      webpack-cli: 4.10.0(webpack-dev-server@4.13.1)(webpack@5.76.2)
+      webpack-cli: 4.10.0(webpack-dev-server@4.15.1)(webpack@5.76.2)
     dev: true
 
-  /@webpack-cli/serve@1.7.0(webpack-cli@4.10.0)(webpack-dev-server@4.13.1):
+  /@webpack-cli/serve@1.7.0(webpack-cli@4.10.0)(webpack-dev-server@4.15.1):
     resolution: {integrity: sha512-oxnCNGj88fL+xzV+dacXs44HcDwf1ovs3AuEzvP7mqXw7fQntqIhQ1BRmynh4qEKQSSSRSWVyXRjmTbZIX9V2Q==}
     peerDependencies:
       webpack-cli: 4.x.x
@@ -2524,8 +2524,8 @@ packages:
       webpack-dev-server:
         optional: true
     dependencies:
-      webpack-cli: 4.10.0(webpack-dev-server@4.13.1)(webpack@5.76.2)
-      webpack-dev-server: 4.13.1(webpack-cli@4.10.0)(webpack@5.76.2)
+      webpack-cli: 4.10.0(webpack-dev-server@4.15.1)(webpack@5.76.2)
+      webpack-dev-server: 4.15.1(webpack-cli@4.10.0)(webpack@5.76.2)
     dev: true
 
   /@xtuc/ieee754@1.2.0:
@@ -6599,7 +6599,7 @@ packages:
     engines: {node: '>=10.4'}
     dev: true
 
-  /webpack-cli@4.10.0(webpack-dev-server@4.13.1)(webpack@5.76.2):
+  /webpack-cli@4.10.0(webpack-dev-server@4.15.1)(webpack@5.76.2):
     resolution: {integrity: sha512-NLhDfH/h4O6UOy+0LSso42xvYypClINuMNBVVzX4vX98TmTaTUxwRbXdhucbFMd2qLaCTcLq/PdYrvi8onw90w==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -6622,7 +6622,7 @@ packages:
       '@discoveryjs/json-ext': 0.5.7
       '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0)(webpack@5.76.2)
       '@webpack-cli/info': 1.5.0(webpack-cli@4.10.0)
-      '@webpack-cli/serve': 1.7.0(webpack-cli@4.10.0)(webpack-dev-server@4.13.1)
+      '@webpack-cli/serve': 1.7.0(webpack-cli@4.10.0)(webpack-dev-server@4.15.1)
       colorette: 2.0.20
       commander: 7.2.0
       cross-spawn: 7.0.3
@@ -6631,7 +6631,7 @@ packages:
       interpret: 2.2.0
       rechoir: 0.7.1
       webpack: 5.76.2(webpack-cli@4.10.0)
-      webpack-dev-server: 4.13.1(webpack-cli@4.10.0)(webpack@5.76.2)
+      webpack-dev-server: 4.15.1(webpack-cli@4.10.0)(webpack@5.76.2)
       webpack-merge: 5.10.0
     dev: true
 
@@ -6649,8 +6649,8 @@ packages:
       webpack: 5.76.2(webpack-cli@4.10.0)
     dev: true
 
-  /webpack-dev-server@4.13.1(webpack-cli@4.10.0)(webpack@5.76.2):
-    resolution: {integrity: sha512-5tWg00bnWbYgkN+pd5yISQKDejRBYGEw15RaEEslH+zdbNDxxaZvEAO2WulaSaFKb5n3YG8JXsGaDsut1D0xdA==}
+  /webpack-dev-server@4.15.1(webpack-cli@4.10.0)(webpack@5.76.2):
+    resolution: {integrity: sha512-5hbAst3h3C3L8w6W4P96L5vaV0PxSmJhxZvWKYIdgxOQm8pNZ5dEOmmSLBVpP85ReeyRt6AS1QJNyo/oFFPeVA==}
     engines: {node: '>= 12.13.0'}
     hasBin: true
     peerDependencies:
@@ -6691,7 +6691,7 @@ packages:
       sockjs: 0.3.24
       spdy: 4.0.2
       webpack: 5.76.2(webpack-cli@4.10.0)
-      webpack-cli: 4.10.0(webpack-dev-server@4.13.1)(webpack@5.76.2)
+      webpack-cli: 4.10.0(webpack-dev-server@4.15.1)(webpack@5.76.2)
       webpack-dev-middleware: 5.3.3(webpack@5.76.2)
       ws: 8.16.0
     transitivePeerDependencies:
@@ -6748,7 +6748,7 @@ packages:
       tapable: 2.2.1
       terser-webpack-plugin: 5.3.10(webpack@5.76.2)
       watchpack: 2.4.0
-      webpack-cli: 4.10.0(webpack-dev-server@4.13.1)(webpack@5.76.2)
+      webpack-cli: 4.10.0(webpack-dev-server@4.15.1)(webpack@5.76.2)
       webpack-sources: 3.2.3
     transitivePeerDependencies:
       - '@swc/core'
