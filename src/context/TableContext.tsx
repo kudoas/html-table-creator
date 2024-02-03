@@ -14,7 +14,11 @@ export interface TableContextProps {
 
 export const TableContext = createContext({} as TableContextProps);
 
-export const TableProvider: React.FC = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+export const TableProvider: React.FC<Props> = ({ children }) => {
   const { state, onChange, addColumn, removeColumn, addRow, removeRow, deleteAllItems, reset } =
     useProvideTable();
 
