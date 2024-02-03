@@ -104,8 +104,8 @@ devDependencies:
     specifier: 27.1.5
     version: 27.1.5(@babel/core@7.23.9)(@types/jest@26.0.24)(jest@27.5.1)(typescript@5.3.3)
   ts-loader:
-    specifier: 9.4.2
-    version: 9.4.2(typescript@5.3.3)(webpack@5.90.1)
+    specifier: 9.5.1
+    version: 9.5.1(typescript@5.3.3)(webpack@5.90.1)
   typescript:
     specifier: 5.3.3
     version: 5.3.3
@@ -6393,8 +6393,8 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /ts-loader@9.4.2(typescript@5.3.3)(webpack@5.90.1):
-    resolution: {integrity: sha512-OmlC4WVmFv5I0PpaxYb+qGeGOdm5giHU7HwDDUjw59emP2UYMHy9fFSDcYgSNoH8sXcj4hGCSEhlDZ9ULeDraA==}
+  /ts-loader@9.5.1(typescript@5.3.3)(webpack@5.90.1):
+    resolution: {integrity: sha512-rNH3sK9kGZcH9dYzC7CewQm4NtxJTjSEVRJ2DyBZR7f8/wcta+iV44UPCXc5+nzDzivKtlzV6c9P4e+oFhDLYg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       typescript: '*'
@@ -6404,6 +6404,7 @@ packages:
       enhanced-resolve: 5.15.0
       micromatch: 4.0.5
       semver: 7.5.4
+      source-map: 0.7.4
       typescript: 5.3.3
       webpack: 5.90.1(webpack-cli@4.10.0)
     dev: true
