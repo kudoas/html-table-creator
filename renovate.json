@@ -9,5 +9,6 @@
   },
   "pin": {
     "automerge": true
-  }
+  },
+  "rangeStrategy": "bump"
 }
