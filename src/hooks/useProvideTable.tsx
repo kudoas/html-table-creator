@@ -55,12 +55,14 @@ export const useProvideTable = () => {
 
   return {
     state,
-    onChange,
-    addColumn,
-    removeColumn,
-    addRow,
-    removeRow,
-    deleteAllItems,
-    reset,
+    actions: {
+      onChange,
+      addColumn,
+      removeColumn,
+      addRow,
+      removeRow,
+      deleteAllItems,
+      reset,
+    },
   };
 };

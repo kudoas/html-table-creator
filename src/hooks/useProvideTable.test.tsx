@@ -17,7 +17,7 @@ describe('useNewTable', () => {
   it('add row', () => {
     const { result } = renderHook(() => useProvideTable());
     act(() => {
-      result.current.addRow();
+      result.current.actions.addRow();
     });
     expect(result.current.state).toStrictEqual([[''], ['']]);
   });
@@ -25,8 +25,8 @@ describe('useNewTable', () => {
   it('remove row', () => {
     const { result } = renderHook(() => useProvideTable());
     act(() => {
-      result.current.addRow();
-      result.current.removeRow();
+      result.current.actions.addRow();
+      result.current.actions.removeRow();
       expect(result.current.state).toStrictEqual([['']]);
     });
   });
@@ -34,7 +34,7 @@ describe('useNewTable', () => {
   it('add column', () => {
     const { result } = renderHook(() => useProvideTable());
     act(() => {
-      result.current.addColumn();
+      result.current.actions.addColumn();
     });
     expect(result.current.state).toStrictEqual([['', '']]);
   });
@@ -42,8 +42,8 @@ describe('useNewTable', () => {
   it('remove column', () => {
     const { result } = renderHook(() => useProvideTable());
     act(() => {
-      result.current.addColumn();
-      result.current.removeColumn();
+      result.current.actions.addColumn();
+      result.current.actions.removeColumn();
     });
     expect(result.current.state).toStrictEqual([['']]);
   });
@@ -51,9 +51,9 @@ describe('useNewTable', () => {
   it('reset table', () => {
     const { result } = renderHook(() => useProvideTable());
     act(() => {
-      result.current.addColumn();
-      result.current.addRow();
-      result.current.reset();
+      result.current.actions.addColumn();
+      result.current.actions.addRow();
+      result.current.actions.reset();
     });
     expect(result.current.state).toStrictEqual([['']]);
   });
@@ -61,11 +61,11 @@ describe('useNewTable', () => {
   it('onChange', () => {
     const { result } = renderHook(() => useProvideTable());
     act(() => {
-      result.current.addColumn();
-      result.current.addRow();
+      result.current.actions.addColumn();
+      result.current.actions.addRow();
     });
     const { container } = render(
-      <input type="text" onChange={(e) => result.current.onChange(e, 1, 1)} />,
+      <input type="text" onChange={(e) => result.current.actions.onChange(e, 1, 1)} />,
     );
     const input = container.querySelector('input');
     act(() => {

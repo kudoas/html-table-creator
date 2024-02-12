@@ -19,8 +19,8 @@ type Props = {
 };
 
 export const TableProvider: React.FC<Props> = ({ children }) => {
-  const { state, onChange, addColumn, removeColumn, addRow, removeRow, deleteAllItems, reset } =
-    useProvideTable();
+  const { state, actions } = useProvideTable();
+  const { onChange, addColumn, removeColumn, addRow, removeRow, deleteAllItems, reset } = actions;
 
   return (
     <TableContext.Provider
