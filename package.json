@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-cli serve --mode development",
+    "start": "webpack serve --mode development",
     "build": "rm -rf dist && webpack --mode production",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -52,7 +52,7 @@
     "url-loader": "4.1.1",
     "webpack": "5.90.2",
     "webpack-cli": "5.1.4",
-    "webpack-dev-server": "4.15.1"
+    "webpack-dev-server": "5.0.2"
   },
   "packageManager": "pnpm@8.15.3"
 }
