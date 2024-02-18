@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-cli serve --mode development",
+    "start": "webpack serve --mode development",
     "build": "rm -rf dist && webpack --mode production",
     "test": "jest",
     "test:watch": "jest --watch",
