@@ -1,13 +1,15 @@
-name: ci
+name: test
 on: pull_request
 jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
-      - run: yarn test
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm test
