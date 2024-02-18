@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { TableProvider } from '../context/TableContext';
 import { hotkeyHandler } from '../utils/hotkeys';
 import Header from '../components/Header';
-import SwitchTableForm from '../components/modules/SwitchTableForm';
+import SwitchTableForm from '../components/SwitchTableForm';
 import ControlPanel from '../components/ControlPanel/ControlPanel';
 import Output from '../components/ControlPanel/Output/Output';
 import Footer from '../components/Footer';

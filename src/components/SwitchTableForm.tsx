@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import Toggle from '../Toggle';
+import Toggle from './Toggle';
 
 type Props = {
   isPreview: boolean;
