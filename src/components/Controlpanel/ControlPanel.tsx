@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 import { generateTableId } from '../../utils/generateTableId';
 import { useTable } from '../../hooks/useTable';
-import ControllButtons from './ControllButtons/ControllButtons';
+import ControlButtons from './ControlButtons/ControlButtons';
 import TableForm from './TableForm/TableForm';
 
 type Props = {
@@ -29,7 +29,7 @@ const Component: React.FCX<Props> = ({
   reset,
 }) => (
   <div className={className}>
-    <ControllButtons
+    <ControlButtons
       state={state}
       addColumn={addColumn}
       removeColumn={removeColumn}
