@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^11.11.0",
-    "@emotion/react": "^11.11.3",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.11",
     "@types/common-tags": "^1.8.4",
