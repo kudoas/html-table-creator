@@ -17,7 +17,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.14",
     "@types/common-tags": "^1.8.4",
-    "@types/react": "^18.2.73",
+    "@types/react": "^18.2.74",
     "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "^18.2.23",
     "@types/react-router-dom": "^5.3.3",
