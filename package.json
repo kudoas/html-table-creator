@@ -15,7 +15,7 @@
     "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@mui/material": "^5.16.1",
+    "@mui/material": "^5.16.2",
     "@types/common-tags": "^1.8.4",
     "@types/react": "^18.3.3",
     "@types/react-copy-to-clipboard": "^5.0.7",
