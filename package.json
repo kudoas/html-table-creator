@@ -32,8 +32,8 @@
     "react-share": "^5.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.25.7",
-    "@babel/preset-env": "7.25.7",
+    "@babel/core": "7.25.8",
+    "@babel/preset-env": "7.25.8",
     "@babel/preset-react": "7.25.7",
     "@babel/preset-typescript": "7.25.7",
     "@testing-library/jest-dom": "6.5.0",
