@@ -60,8 +60,8 @@ importers:
         specifier: ^6.28.0
         version: 6.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-share:
-        specifier: ^5.1.0
-        version: 5.1.0(react@18.3.1)
+        specifier: ^5.1.1
+        version: 5.1.1(react@18.3.1)
     devDependencies:
       '@babel/core':
         specifier: 7.26.0
@@ -2954,8 +2954,8 @@ packages:
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
 
-  react-share@5.1.0:
-    resolution: {integrity: sha512-OvyfMtj/0UzH1wi90OdHhZVJ6WUC/+IeWvBwppeZozwIGyAjQgyR0QXlHOrxVHVECqnGvcpBaFTXVrqouTieaw==}
+  react-share@5.1.1:
+    resolution: {integrity: sha512-9rX6X4FiLwKi/eygTx6TWEKv0EuL15AdP6vnFMw5sA4UwTja0mgV4N3gAbkE9+5n3ry7BsBBeOnhaXbJ+jn9kQ==}
     peerDependencies:
       react: ^17 || ^18
 
@@ -5071,7 +5071,7 @@ snapshots:
 
   '@types/react-share@4.0.0(react@18.3.1)':
     dependencies:
-      react-share: 5.1.0(react@18.3.1)
+      react-share: 5.1.1(react@18.3.1)
     transitivePeerDependencies:
       - react
       - supports-color
@@ -7029,7 +7029,7 @@ snapshots:
       react: 18.3.1
       react-is: 18.3.1
 
-  react-share@5.1.0(react@18.3.1):
+  react-share@5.1.1(react@18.3.1):
     dependencies:
       classnames: 2.5.1
       jsonp: 0.2.1
