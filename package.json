@@ -23,7 +23,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/react-share": "^4.0.0",
     "common-tags": "^1.8.2",
-    "hotkeys-js": "^3.13.12",
+    "hotkeys-js": "^3.13.14",
     "path": "^0.12.7",
     "react": "^19.1.0",
     "react-copy-to-clipboard": "^5.1.0",
