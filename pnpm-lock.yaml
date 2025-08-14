@@ -94,8 +94,8 @@ importers:
         specifier: 6.2.0
         version: 6.2.0(webpack@5.101.1)
       html-webpack-plugin:
-        specifier: 5.6.3
-        version: 5.6.3(webpack@5.101.1)
+        specifier: 5.6.4
+        version: 5.6.4(webpack@5.101.1)
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.11.19)(babel-plugin-macros@3.1.0)
@@ -2197,8 +2197,8 @@ packages:
     engines: {node: '>=12'}
     hasBin: true
 
-  html-webpack-plugin@5.6.3:
-    resolution: {integrity: sha512-QSf1yjtSAsmf7rYBV7XX86uua4W/vkhIt0xNXKbsi2foEeW7vjJQz4bhnpL3xH+l1ryl1680uNv968Z+X6jSYg==}
+  html-webpack-plugin@5.6.4:
+    resolution: {integrity: sha512-V/PZeWsqhfpE27nKeX9EO2sbR+D17A+tLf6qU+ht66jdUsN0QLKJN27Z+1+gHrVMKgndBahes0PU6rRihDgHTw==}
     engines: {node: '>=10.13.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
@@ -3304,11 +3304,6 @@ packages:
         optional: true
       uglify-js:
         optional: true
-
-  terser@5.27.1:
-    resolution: {integrity: sha512-29wAr6UU/oQpnTw5HoadwjUZnFQXGdOfj0LjZ4sVxzqwHh/QVkvr7m8y9WoR4iN3FRitVduTc6KdjcW38Npsug==}
-    engines: {node: '>=10'}
-    hasBin: true
 
   terser@5.39.0:
     resolution: {integrity: sha512-LBAhFyLho16harJoWMg/nZsQYgTrg5jXOn2nCYjRUcZZEdE3qa2zb8QEDRUGVZBW4rlazf2fxkg8tztybTaqWw==}
@@ -6117,9 +6112,9 @@ snapshots:
       he: 1.2.0
       param-case: 3.0.4
       relateurl: 0.2.7
-      terser: 5.27.1
+      terser: 5.39.0
 
-  html-webpack-plugin@5.6.3(webpack@5.101.1):
+  html-webpack-plugin@5.6.4(webpack@5.101.1):
     dependencies:
       '@types/html-minifier-terser': 6.1.0
       html-minifier-terser: 6.1.0
@@ -7421,13 +7416,6 @@ snapshots:
       serialize-javascript: 6.0.2
       terser: 5.39.0
       webpack: 5.101.1(webpack-cli@6.0.1)
-
-  terser@5.27.1:
-    dependencies:
-      '@jridgewell/source-map': 0.3.5
-      acorn: 8.15.0
-      commander: 2.20.3
-      source-map-support: 0.5.21
 
   terser@5.39.0:
     dependencies:
