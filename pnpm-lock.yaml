@@ -30,8 +30,8 @@ importers:
         specifier: ^5.0.7
         version: 5.0.7
       '@types/react-dom':
-        specifier: ^19.1.7
-        version: 19.1.7(@types/react@19.1.11)
+        specifier: ^19.1.8
+        version: 19.1.8(@types/react@19.1.11)
       '@types/react-router-dom':
         specifier: ^5.3.3
         version: 5.3.3
@@ -80,7 +80,7 @@ importers:
         version: 6.8.0
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.1.0)(@types/react-dom@19.1.7(@types/react@19.1.11))(@types/react@19.1.11)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 16.3.0(@testing-library/dom@10.1.0)(@types/react-dom@19.1.8(@types/react@19.1.11))(@types/react@19.1.11)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@testing-library/react-hooks':
         specifier: 8.0.1
         version: 8.0.1(@types/react@19.1.11)(react-dom@19.1.1(react@19.1.1))(react-test-renderer@19.1.1(react@19.1.1))(react@19.1.1)
@@ -1223,8 +1223,8 @@ packages:
   '@types/react-copy-to-clipboard@5.0.7':
     resolution: {integrity: sha512-Gft19D+as4M+9Whq1oglhmK49vqPhcLzk8WfvfLvaYMIPYanyfLy0+CwFucMJfdKoSFyySPmkkWn8/E6voQXjQ==}
 
-  '@types/react-dom@19.1.7':
-    resolution: {integrity: sha512-i5ZzwYpqjmrKenzkoLM2Ibzt6mAsM7pxB6BCIouEVVmgiqaMj1TjaK7hnA36hbW5aZv20kx7Lw6hWzPWg0Rurw==}
+  '@types/react-dom@19.1.8':
+    resolution: {integrity: sha512-xG7xaBMJCpcK0RpN8jDbAACQo54ycO6h4dSSmgv8+fu6ZIAdANkx/WsawASUjVXYfy+J9AbUpRMNNEsXCDfDBQ==}
     peerDependencies:
       '@types/react': ^19.0.0
 
@@ -4919,7 +4919,7 @@ snapshots:
       react-dom: 19.1.1(react@19.1.1)
       react-test-renderer: 19.1.1(react@19.1.1)
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.1.0)(@types/react-dom@19.1.7(@types/react@19.1.11))(@types/react@19.1.11)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.1.0)(@types/react-dom@19.1.8(@types/react@19.1.11))(@types/react@19.1.11)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@babel/runtime': 7.23.9
       '@testing-library/dom': 10.1.0
@@ -4927,7 +4927,7 @@ snapshots:
       react-dom: 19.1.1(react@19.1.1)
     optionalDependencies:
       '@types/react': 19.1.11
-      '@types/react-dom': 19.1.7(@types/react@19.1.11)
+      '@types/react-dom': 19.1.8(@types/react@19.1.11)
 
   '@tootallnate/once@2.0.0': {}
 
@@ -5061,7 +5061,7 @@ snapshots:
     dependencies:
       '@types/react': 19.1.11
 
-  '@types/react-dom@19.1.7(@types/react@19.1.11)':
+  '@types/react-dom@19.1.8(@types/react@19.1.11)':
     dependencies:
       '@types/react': 19.1.11
 
