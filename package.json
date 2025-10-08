@@ -28,7 +28,7 @@
     "react": "^19.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.3",
+    "react-router-dom": "^7.9.4",
     "react-share": "^5.2.2"
   },
   "devDependencies": {
