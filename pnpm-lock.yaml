@@ -42,8 +42,8 @@ importers:
         specifier: ^1.8.2
         version: 1.8.2
       hotkeys-js:
-        specifier: ^4.0.0
-        version: 4.0.0
+        specifier: ^4.0.1
+        version: 4.0.1
       path:
         specifier: ^0.12.7
         version: 0.12.7
@@ -2379,8 +2379,8 @@ packages:
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
-  hotkeys-js@4.0.0:
-    resolution: {integrity: sha512-gIoeqMWYqPIItc4HaseVbtTRpEpBbeufZMUcoWtN62JZdDq3KadS1ijN6wpaDjTzRK7PjT3QOPUcx+yNT0rrZQ==}
+  hotkeys-js@4.0.1:
+    resolution: {integrity: sha512-zjh2YxGhTMbddFUxyMOc35Iq0v86N7JnsB62m4hm34fG/CVX1ard7Gp3AJN4PK9lSLFexK14zPMNVwSYgz3tRg==}
 
   hpack.js@2.1.6:
     resolution: {integrity: sha512-zJxVehUdMGIKsRaNt7apO2Gqp0BdqW5yaiGHXXmbpvxgBYVZnAql+BJb4RO5ad2MgpbZKn5G6nMnegrH1FcNYQ==}
@@ -6568,7 +6568,7 @@ snapshots:
     dependencies:
       react-is: 16.13.1
 
-  hotkeys-js@4.0.0: {}
+  hotkeys-js@4.0.1: {}
 
   hpack.js@2.1.6:
     dependencies:
