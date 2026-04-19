@@ -4,28 +4,31 @@ description: Set up pnpm, configure GitHub Packages auth, and run a safe install
 inputs:
   github-token:
     description: Token for installing internal packages from GitHub Packages.
+    required: true
+  working-directory:
+    description: Working directory for pnpm install.
     required: false
+    default: '.'
 
 runs:
   using: composite
   steps:
-    - name: Set up pnpm
-      uses: pnpm/action-setup@71c92474e7e4f5bca283fb17ef80fba9cdb2b4b1 # v6.0.2
+    - uses: pnpm/action-setup@71c92474e7e4f5bca283fb17ef80fba9cdb2b4b1 # v6.0.2
       with:
-        run_install: false
         version: 10.33.0
-    - name: Configure GitHub Packages authentication
-      shell: bash
-      env:
-        NODE_AUTH_TOKEN: ${{ inputs.github-token || github.token }}
-      run: |
-        echo "@kudoas:registry=https://npm.pkg.github.com" >> ~/.npmrc
-        echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
-        echo "//npm.pkg.github.com/:always-auth=true" >> ~/.npmrc
+    - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+      with:
+        cache: 'pnpm'
+        node-version: 24
+        registry-url: https://npm.pkg.github.com
+        scope: '@kudoas'
     - name: Configure pnpm workspace settings
       shell: bash
       run: |
         pnpm config set --location=project strict-dep-builds true
     - name: Install dependencies
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: pnpm install --frozen-lockfile --ignore-scripts
+      env:
+        NODE_AUTH_TOKEN: ${{ inputs.github-token }}
