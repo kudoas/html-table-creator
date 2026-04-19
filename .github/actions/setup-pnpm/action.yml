@@ -1,0 +1,24 @@
+name: setup-pnpm
+description: Set up pnpm, configure GitHub Packages auth, and run a safe install for my-org repositories.
+
+inputs:
+  github-token:
+    description: Token for installing internal packages from GitHub Packages.
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Configure GitHub Packages authentication
+      shell: bash
+      env:
+        NODE_AUTH_TOKEN: ${{ inputs.github-token || github.token }}
+      run: |
+        echo "@kudoas:registry=https://npm.pkg.github.com" >> ~/.npmrc
+        echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
+        echo "//npm.pkg.github.com/:always-auth=true" >> ~/.npmrc
+    - name: Install dependencies
+      uses: pnpm/action-setup@71c92474e7e4f5bca283fb17ef80fba9cdb2b4b1 # v6.0.2
+      with:
+        run_install: |
+          - args: ['--frozen-lockfile', '--ignore-scripts']
