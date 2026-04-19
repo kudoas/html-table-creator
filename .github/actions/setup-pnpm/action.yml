@@ -9,6 +9,11 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Set up pnpm
+      uses: pnpm/action-setup@71c92474e7e4f5bca283fb17ef80fba9cdb2b4b1 # v6.0.2
+      with:
+        run_install: false
+        version: 10.33.0
     - name: Configure GitHub Packages authentication
       shell: bash
       env:
@@ -17,8 +22,10 @@ runs:
         echo "@kudoas:registry=https://npm.pkg.github.com" >> ~/.npmrc
         echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
         echo "//npm.pkg.github.com/:always-auth=true" >> ~/.npmrc
+    - name: Configure pnpm workspace settings
+      shell: bash
+      run: |
+        pnpm config set --location=project strict-dep-builds true
     - name: Install dependencies
-      uses: pnpm/action-setup@71c92474e7e4f5bca283fb17ef80fba9cdb2b4b1 # v6.0.2
-      with:
-        run_install: |
-          - args: ['--frozen-lockfile', '--ignore-scripts']
+      shell: bash
+      run: pnpm install --frozen-lockfile --ignore-scripts
