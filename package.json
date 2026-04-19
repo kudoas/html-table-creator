@@ -7,7 +7,7 @@
     "build": "rm -rf dist && webpack --mode production",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"    
+    "test:coverage": "jest --coverage"
   },
   "author": "daichi",
   "license": "MIT",
