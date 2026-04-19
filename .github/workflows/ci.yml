@@ -10,5 +10,9 @@ jobs:
       - uses: ./.github/actions/setup-pnpm
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: "pnpm"
       - run: pnpm build
       - run: pnpm test
