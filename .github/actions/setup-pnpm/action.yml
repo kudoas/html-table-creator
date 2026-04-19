@@ -22,6 +22,7 @@ runs:
         node-version: 24
         registry-url: https://npm.pkg.github.com
         scope: '@kudoas'
+        cache-dependency-path: ${{ inputs.working-directory }}/pnpm-lock.yaml
     - name: Configure pnpm workspace settings
       shell: bash
       run: |
