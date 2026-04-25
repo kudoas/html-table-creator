@@ -1,15 +1,6 @@
 name: setup-pnpm
 description: Set up pnpm, configure GitHub Packages auth, and run a safe install for my-org repositories.
 
-inputs:
-  github-token:
-    description: Token for installing internal packages from GitHub Packages.
-    required: true
-  working-directory:
-    description: Working directory for pnpm install.
-    required: false
-    default: '.'
-
 runs:
   using: composite
   steps:
@@ -22,14 +13,10 @@ runs:
         node-version: 24
         registry-url: https://npm.pkg.github.com
         scope: '@kudoas'
-        cache-dependency-path: ${{ inputs.working-directory }}/pnpm-lock.yaml
     - name: Configure pnpm workspace settings
       shell: bash
       run: |
         pnpm config set --location=project strict-dep-builds true
     - name: Install dependencies
       shell: bash
-      working-directory: ${{ inputs.working-directory }}
-      run: pnpm install --frozen-lockfile --ignore-scripts
-      env:
-        NODE_AUTH_TOKEN: ${{ inputs.github-token }}
+      run: pnpm install --frozen-lockfile
