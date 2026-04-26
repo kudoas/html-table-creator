@@ -12,8 +12,9 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "types": ["vitest/globals"],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": false
   },
-  "exclude": ["node_modules", "*.js", "dist"]
+  "exclude": ["node_modules", "*.js", "dist", "vitest.config.ts"]
 }
