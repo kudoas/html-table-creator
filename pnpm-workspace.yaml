@@ -2,7 +2,7 @@ packages:
   - tools
 allowBuilds:
   unrs-resolver: false
-minimumReleaseAge: 10080 # 1 week
+minimumReleaseAge: 4320 # 3 days
 saveExact: true
 shamefullyHoist: true
 strictDepBuilds: true
