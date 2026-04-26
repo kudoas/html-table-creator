@@ -3,8 +3,7 @@
  */
 
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import { renderHook, act } from '@testing-library/react-hooks';
+import { render, fireEvent, renderHook, act } from '@testing-library/react';
 
 import { TABLE_STORAGE_KEY, useProvideTable } from './useProvideTable';
 
