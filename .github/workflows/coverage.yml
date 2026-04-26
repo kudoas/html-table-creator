@@ -1,0 +1,96 @@
+name: coverage
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: ./.github/actions/setup-pnpm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run coverage
+        id: coverage
+        continue-on-error: true
+        run: pnpm test:coverage
+
+      - name: Build coverage comment
+        if: always()
+        env:
+          COVERAGE_OUTCOME: ${{ steps.coverage.outcome }}
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+
+          const marker = '<!-- coverage-report -->';
+          const summaryPath = 'coverage/coverage-summary.json';
+          const outcome = process.env.COVERAGE_OUTCOME;
+          let shouldFail = outcome !== 'success';
+
+          let body = `${marker}
+          ## Coverage Report
+
+          `;
+
+          if (outcome !== 'success') {
+            body += `Status: **FAIL**
+
+          \`pnpm test:coverage\` failed. Check the workflow log for details.
+          `;
+          } else if (!fs.existsSync(summaryPath)) {
+            shouldFail = true;
+            body += `Status: **FAIL**
+
+          \`${summaryPath}\` was not generated.
+          `;
+          } else {
+            const summary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
+            const total = summary.total;
+            const rows = [
+              ['Statements', total.statements],
+              ['Branches', total.branches],
+              ['Functions', total.functions],
+              ['Lines', total.lines],
+            ];
+
+            body += `Status: **PASS**
+
+          | Metric | Covered | Total | Coverage |
+          | --- | ---: | ---: | ---: |
+          ${rows
+            .map(([name, value]) => `| ${name} | ${value.covered} | ${value.total} | ${value.pct}% |`)
+            .join('\n')}
+          `;
+          }
+
+          fs.writeFileSync('coverage-comment.md', `${body.trim()}\n`);
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${body.replace(`${marker}\n`, '').trim()}\n`);
+          process.exitCode = shouldFail ? 1 : 0;
+          NODE
+
+      - name: Upsert coverage comment
+        if: always() && github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          comment_id="$(gh api "repos/$REPO/issues/$PR_NUMBER/comments" --jq '.[] | select(.body | contains("<!-- coverage-report -->")) | .id' | head -n 1)"
+
+          if [ -n "$comment_id" ]; then
+            gh api --method PATCH "repos/$REPO/issues/comments/$comment_id" --field body="$(< coverage-comment.md)"
+          else
+            gh api --method POST "repos/$REPO/issues/$PR_NUMBER/comments" --field body="$(< coverage-comment.md)"
+          fi
+
+      - name: Fail when coverage fails
+        if: steps.coverage.outcome != 'success'
+        run: exit 1
