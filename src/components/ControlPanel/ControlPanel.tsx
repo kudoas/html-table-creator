@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { generateTableId } from '../../utils/generateTableId';
+import { type InsertPosition } from '../../hooks/useProvideTable';
 import { useTable } from '../../hooks/useTable';
 import ControlButtons from './ControlButtons/ControlButtons';
 import TableForm from './TableForm/TableForm';
@@ -9,10 +10,10 @@ import TableForm from './TableForm/TableForm';
 type Props = {
   state: string[][];
   onChange: (e: React.FormEvent<HTMLInputElement>, column: number, row: number) => void;
-  addColumn: () => void;
-  removeColumn: () => void;
-  addRow: () => void;
-  removeRow: () => void;
+  addColumnAt: (columnIndex: number, position: InsertPosition) => void;
+  removeColumnAt: (columnIndex: number) => void;
+  addRowAt: (rowIndex: number, position: InsertPosition) => void;
+  removeRowAt: (rowIndex: number) => void;
   deleteAllItems: () => void;
   reset: () => void;
 };
@@ -21,24 +22,24 @@ const Component: React.FCX<Props> = ({
   state,
   className,
   onChange,
-  addColumn,
-  removeColumn,
-  addRow,
-  removeRow,
+  addColumnAt,
+  removeColumnAt,
+  addRowAt,
+  removeRowAt,
   deleteAllItems,
   reset,
 }) => (
   <div className={className}>
-    <ControlButtons
+    <ControlButtons deleteAllItems={deleteAllItems} reset={reset} />
+    <TableForm
+      tableKeys={generateTableId(state)}
+      onChange={onChange}
       state={state}
-      addColumn={addColumn}
-      removeColumn={removeColumn}
-      addRow={addRow}
-      removeRow={removeRow}
-      deleteAllItems={deleteAllItems}
-      reset={reset}
+      addColumnAt={addColumnAt}
+      removeColumnAt={removeColumnAt}
+      addRowAt={addRowAt}
+      removeRowAt={removeRowAt}
     />
-    <TableForm tableKeys={generateTableId(state)} onChange={onChange} state={state} />
   </div>
 );
 
@@ -47,17 +48,25 @@ const StyledComponent = styled(Component)`
 `;
 
 const Container: React.FC = () => {
-  const { state, onChange, addColumn, removeColumn, addRow, removeRow, deleteAllItems, reset } =
-    useTable();
+  const {
+    state,
+    onChange,
+    addColumnAt,
+    removeColumnAt,
+    addRowAt,
+    removeRowAt,
+    deleteAllItems,
+    reset,
+  } = useTable();
 
   return (
     <StyledComponent
       state={state}
       onChange={onChange}
-      addColumn={addColumn}
-      removeColumn={removeColumn}
-      addRow={addRow}
-      removeRow={removeRow}
+      addColumnAt={addColumnAt}
+      removeColumnAt={removeColumnAt}
+      addRowAt={addRowAt}
+      removeRowAt={removeRowAt}
       deleteAllItems={deleteAllItems}
       reset={reset}
     />

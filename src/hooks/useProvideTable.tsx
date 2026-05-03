@@ -2,6 +2,8 @@ import React, { useState, useCallback, useEffect } from 'react';
 
 export const TABLE_STORAGE_KEY = 'html-table-creator:table-state';
 
+export type InsertPosition = 'before' | 'after';
+
 const createInitialTableState = (): string[][] => [['']];
 
 const isTableState = (value: unknown): value is string[][] => {
@@ -50,61 +52,102 @@ export const useProvideTable = () => {
   const onChange = useCallback(
     (e: React.FormEvent<HTMLInputElement>, column: number, row: number) => {
       const tableItem = e.currentTarget.value;
-      const updateState = [...state];
-      updateState[column][row] = tableItem;
-      setState(updateState);
+      setState((currentState) =>
+        currentState.map((currentRow, rowIndex) =>
+          rowIndex === column
+            ? currentRow.map((cell, columnIndex) => (columnIndex === row ? tableItem : cell))
+            : currentRow,
+        ),
+      );
     },
-    [state],
+    [],
   );
 
+  const addColumnAt = useCallback((columnIndex: number, position: InsertPosition) => {
+    setState((currentState) => {
+      const insertIndex = position === 'after' ? columnIndex + 1 : columnIndex;
+      const boundedInsertIndex = Math.max(0, Math.min(insertIndex, currentState[0].length));
+
+      return currentState.map((currentRow) => [
+        ...currentRow.slice(0, boundedInsertIndex),
+        '',
+        ...currentRow.slice(boundedInsertIndex),
+      ]);
+    });
+  }, []);
+
+  const removeColumnAt = useCallback((columnIndex: number) => {
+    setState((currentState) => {
+      if (currentState[0].length <= 1 || columnIndex < 0 || columnIndex >= currentState[0].length) {
+        return currentState;
+      }
+
+      return currentState.map((currentRow) =>
+        currentRow.filter((_, currentColumnIndex) => currentColumnIndex !== columnIndex),
+      );
+    });
+  }, []);
+
+  const addRowAt = useCallback((rowIndex: number, position: InsertPosition) => {
+    setState((currentState) => {
+      const insertIndex = position === 'after' ? rowIndex + 1 : rowIndex;
+      const boundedInsertIndex = Math.max(0, Math.min(insertIndex, currentState.length));
+      const initRow = new Array(currentState[0].length).fill('');
+
+      return [
+        ...currentState.slice(0, boundedInsertIndex),
+        initRow,
+        ...currentState.slice(boundedInsertIndex),
+      ];
+    });
+  }, []);
+
+  const removeRowAt = useCallback((rowIndex: number) => {
+    setState((currentState) => {
+      if (currentState.length <= 1 || rowIndex < 0 || rowIndex >= currentState.length) {
+        return currentState;
+      }
+
+      return currentState.filter((_, currentRowIndex) => currentRowIndex !== rowIndex);
+    });
+  }, []);
+
   const addColumn = useCallback(() => {
-    let updateState = [...state];
-    for (const updateStateItem of updateState) {
-      updateStateItem.push('');
-    }
-    setState(updateState);
-  }, [state]);
+    addColumnAt(state[0].length - 1, 'after');
+  }, [addColumnAt, state]);
 
   const removeColumn = useCallback(() => {
-    let updateState = [...state];
-    for (const updateStateItem of updateState) {
-      updateStateItem.pop();
-    }
-    setState(updateState);
-  }, [state]);
+    removeColumnAt(state[0].length - 1);
+  }, [removeColumnAt, state]);
 
   const addRow = useCallback(() => {
-    let updateState = [...state];
-    const initRow = new Array(updateState[0].length).fill('');
-    updateState.push(initRow);
-    setState(updateState);
-  }, [state]);
+    addRowAt(state.length - 1, 'after');
+  }, [addRowAt, state]);
 
   const removeRow = useCallback(() => {
-    const updateState = [...state].slice(0, state.length - 1);
-    setState(updateState);
-  }, [state]);
+    removeRowAt(state.length - 1);
+  }, [removeRowAt, state]);
 
   const deleteAllItems = useCallback(() => {
-    let updateState = [...state];
-    for (const updateStateItem of updateState) {
-      updateStateItem.fill('');
-    }
-    setState(updateState);
-  }, [state]);
+    setState((currentState) => currentState.map((currentRow) => currentRow.map(() => '')));
+  }, []);
 
   const reset = useCallback(() => {
     setState(createInitialTableState());
-  }, [state]);
+  }, []);
 
   return {
     state,
     actions: {
       onChange,
       addColumn,
+      addColumnAt,
       removeColumn,
+      removeColumnAt,
       addRow,
+      addRowAt,
       removeRow,
+      removeRowAt,
       deleteAllItems,
       reset,
     },
