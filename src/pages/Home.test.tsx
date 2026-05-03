@@ -32,7 +32,7 @@ describe('Home', () => {
     );
 
     expect(screen.getByText('Create Your Table')).toBeTruthy();
-    expect(screen.getByRole('button', { name: /Add Column/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Add column after 1' })).toBeTruthy();
 
     fireEvent.click(screen.getByRole('checkbox'));
     expect(screen.getByRole('button', { name: 'Copy to Clipboard' })).toBeTruthy();
@@ -42,7 +42,7 @@ describe('Home', () => {
       hotkeyMock.callback?.({ preventDefault }, {});
     });
     expect(preventDefault).toHaveBeenCalledTimes(1);
-    expect(screen.getByRole('button', { name: /Add Column/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Add column after 1' })).toBeTruthy();
 
     consoleSpy.mockRestore();
   });

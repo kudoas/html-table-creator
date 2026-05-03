@@ -83,6 +83,67 @@ describe('useNewTable', () => {
     });
   });
 
+  it('add row before selected row', () => {
+    window.localStorage.setItem(
+      TABLE_STORAGE_KEY,
+      JSON.stringify([
+        ['row 1'],
+        ['row 2'],
+      ]),
+    );
+    const { result } = renderHook(() => useProvideTable());
+
+    act(() => {
+      result.current.actions.addRowAt(1, 'before');
+    });
+
+    expect(result.current.state).toStrictEqual([['row 1'], [''], ['row 2']]);
+  });
+
+  it('add row after selected row', () => {
+    window.localStorage.setItem(
+      TABLE_STORAGE_KEY,
+      JSON.stringify([
+        ['row 1'],
+        ['row 2'],
+      ]),
+    );
+    const { result } = renderHook(() => useProvideTable());
+
+    act(() => {
+      result.current.actions.addRowAt(0, 'after');
+    });
+
+    expect(result.current.state).toStrictEqual([['row 1'], [''], ['row 2']]);
+  });
+
+  it('remove selected row', () => {
+    window.localStorage.setItem(
+      TABLE_STORAGE_KEY,
+      JSON.stringify([
+        ['row 1'],
+        ['row 2'],
+      ]),
+    );
+    const { result } = renderHook(() => useProvideTable());
+
+    act(() => {
+      result.current.actions.removeRowAt(0);
+    });
+
+    expect(result.current.state).toStrictEqual([['row 2']]);
+  });
+
+  it('keeps at least one row when removing selected row', () => {
+    const { result } = renderHook(() => useProvideTable());
+
+    act(() => {
+      result.current.actions.removeRowAt(0);
+    });
+
+    expect(result.current.state).toStrictEqual([['']]);
+  });
+
   it('add column', () => {
     const { result } = renderHook(() => useProvideTable());
     act(() => {
@@ -111,6 +172,49 @@ describe('useNewTable', () => {
       result.current.actions.addColumn();
       result.current.actions.removeColumn();
     });
+    expect(result.current.state).toStrictEqual([['']]);
+  });
+
+  it('add column before selected column', () => {
+    window.localStorage.setItem(TABLE_STORAGE_KEY, JSON.stringify([['column 1', 'column 2']]));
+    const { result } = renderHook(() => useProvideTable());
+
+    act(() => {
+      result.current.actions.addColumnAt(1, 'before');
+    });
+
+    expect(result.current.state).toStrictEqual([['column 1', '', 'column 2']]);
+  });
+
+  it('add column after selected column', () => {
+    window.localStorage.setItem(TABLE_STORAGE_KEY, JSON.stringify([['column 1', 'column 2']]));
+    const { result } = renderHook(() => useProvideTable());
+
+    act(() => {
+      result.current.actions.addColumnAt(0, 'after');
+    });
+
+    expect(result.current.state).toStrictEqual([['column 1', '', 'column 2']]);
+  });
+
+  it('remove selected column', () => {
+    window.localStorage.setItem(TABLE_STORAGE_KEY, JSON.stringify([['column 1', 'column 2']]));
+    const { result } = renderHook(() => useProvideTable());
+
+    act(() => {
+      result.current.actions.removeColumnAt(0);
+    });
+
+    expect(result.current.state).toStrictEqual([['column 2']]);
+  });
+
+  it('keeps at least one column when removing selected column', () => {
+    const { result } = renderHook(() => useProvideTable());
+
+    act(() => {
+      result.current.actions.removeColumnAt(0);
+    });
+
     expect(result.current.state).toStrictEqual([['']]);
   });
 
