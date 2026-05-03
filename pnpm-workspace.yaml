@@ -3,6 +3,8 @@ packages:
 allowBuilds:
   unrs-resolver: false
 minimumReleaseAge: 4320 # 3 days
+minimumReleaseAgeExclude:
+  - uuid@14.0.0
 saveExact: true
 shamefullyHoist: true
 strictDepBuilds: true
