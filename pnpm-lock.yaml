@@ -88,8 +88,8 @@ importers:
         specifier: 5.6.7
         version: 5.6.7(webpack@5.106.2)
       jsdom:
-        specifier: 29.1.0
-        version: 29.1.0
+        specifier: 29.1.1
+        version: 29.1.1
       ts-loader:
         specifier: 9.5.7
         version: 9.5.7(typescript@5.9.3)(webpack@5.106.2)
@@ -101,7 +101,7 @@ importers:
         version: 4.1.1(file-loader@6.2.0(webpack@5.106.2))(webpack@5.106.2)
       vitest:
         specifier: 4.1.5
-        version: 4.1.5(@types/node@24.10.1)(@vitest/coverage-v8@4.1.5)(jsdom@29.1.0)(vite@8.0.10(@types/node@24.10.1)(terser@5.44.1))
+        version: 4.1.5(@types/node@24.10.1)(@vitest/coverage-v8@4.1.5)(jsdom@29.1.1)(vite@8.0.10(@types/node@24.10.1)(terser@5.44.1))
       webpack:
         specifier: 5.106.2
         version: 5.106.2(webpack-cli@7.0.2)
@@ -2173,8 +2173,8 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
-  jsdom@29.1.0:
-    resolution: {integrity: sha512-YNUc7fB9QuvSSQWfrH0xF+TyABkxUwx8sswgIDaCrw4Hol8BghdZDkITtZheRJeMtzWlnTfsM3bBBusRvpO1wg==}
+  jsdom@29.1.1:
+    resolution: {integrity: sha512-ECi4Fi2f7BdJtUKTflYRTiaMxIB0O6zfR1fX0GXpUrf6flp8QIYn1UT20YQqdSOfk2dfkCwS8LAFoJDEppNK5Q==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
@@ -4694,7 +4694,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.1.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.5(@types/node@24.10.1)(@vitest/coverage-v8@4.1.5)(jsdom@29.1.0)(vite@8.0.10(@types/node@24.10.1)(terser@5.44.1))
+      vitest: 4.1.5(@types/node@24.10.1)(@vitest/coverage-v8@4.1.5)(jsdom@29.1.1)(vite@8.0.10(@types/node@24.10.1)(terser@5.44.1))
 
   '@vitest/expect@4.1.5':
     dependencies:
@@ -5613,7 +5613,7 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  jsdom@29.1.0:
+  jsdom@29.1.1:
     dependencies:
       '@asamuzakjp/css-color': 5.1.11
       '@asamuzakjp/dom-selector': 7.1.1
@@ -6510,7 +6510,7 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.44.1
 
-  vitest@4.1.5(@types/node@24.10.1)(@vitest/coverage-v8@4.1.5)(jsdom@29.1.0)(vite@8.0.10(@types/node@24.10.1)(terser@5.44.1)):
+  vitest@4.1.5(@types/node@24.10.1)(@vitest/coverage-v8@4.1.5)(jsdom@29.1.1)(vite@8.0.10(@types/node@24.10.1)(terser@5.44.1)):
     dependencies:
       '@vitest/expect': 4.1.5
       '@vitest/mocker': 4.1.5(vite@8.0.10(@types/node@24.10.1)(terser@5.44.1))
@@ -6535,7 +6535,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.10.1
       '@vitest/coverage-v8': 4.1.5(vitest@4.1.5)
-      jsdom: 29.1.0
+      jsdom: 29.1.1
     transitivePeerDependencies:
       - msw
 
