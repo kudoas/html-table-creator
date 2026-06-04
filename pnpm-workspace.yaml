@@ -5,6 +5,8 @@ allowBuilds:
 minimumReleaseAge: 4320 # 3 days
 minimumReleaseAgeExclude:
   - uuid@14.0.0
+  # Renovate security update: webpack-dev-server@5.2.4
+  - webpack-dev-server@5.2.4
 saveExact: true
 shamefullyHoist: true
 strictDepBuilds: true
