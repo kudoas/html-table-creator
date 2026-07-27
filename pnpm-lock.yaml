@@ -91,8 +91,8 @@ importers:
         specifier: 29.1.1
         version: 29.1.1
       ts-loader:
-        specifier: 9.5.7
-        version: 9.5.7(typescript@5.9.3)(webpack@5.108.4)
+        specifier: 9.6.2
+        version: 9.6.2(loader-utils@2.0.4)(typescript@5.9.3)(webpack@5.108.4)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1801,10 +1801,6 @@ packages:
     resolution: {integrity: sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==}
     engines: {node: '>= 0.8'}
 
-  enhanced-resolve@5.20.0:
-    resolution: {integrity: sha512-/ce7+jQ1PQ6rVXwe+jKEg5hW5ciicHwIQUagZkp6IufBoY3YDgdTTY1azVs0qoRgVmvsNB+rbjLJxDAeHHtwsQ==}
-    engines: {node: '>=10.13.0'}
-
   enhanced-resolve@5.24.2:
     resolution: {integrity: sha512-rpsZEGT1jFuve6QlpyRp9ckQ+kN61hvF9BzCPyMdaKTm8UJce96KBn3sorXOFXlzjPrs3Vc4T1NsSroZ3PxlFw==}
     engines: {node: '>=10.13.0'}
@@ -3042,12 +3038,16 @@ packages:
     peerDependencies:
       tslib: '2'
 
-  ts-loader@9.5.7:
-    resolution: {integrity: sha512-/ZNrKgA3K3PtpMYOC71EeMWIloGw3IYEa5/t1cyz2r5/PyUwTXGzYJvcD3kfUvmhlfpz1rhV8B2O6IVTQ0avsg==}
+  ts-loader@9.6.2:
+    resolution: {integrity: sha512-R4iuczmtgxvtuI556s+hTZ6/7Ee03VCAk/l/M8LY1OAsUgB7YydsCxkgq9D9pKRaD7GJqUi2u8fp9zZP/ufjKA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
+      loader-utils: '*'
       typescript: '*'
-      webpack: ^5.0.0
+      webpack: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      loader-utils:
+        optional: true
 
   tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
@@ -5319,11 +5319,6 @@ snapshots:
 
   encodeurl@2.0.0: {}
 
-  enhanced-resolve@5.20.0:
-    dependencies:
-      graceful-fs: 4.2.11
-      tapable: 2.3.0
-
   enhanced-resolve@5.24.2:
     dependencies:
       graceful-fs: 4.2.11
@@ -6525,15 +6520,15 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  ts-loader@9.5.7(typescript@5.9.3)(webpack@5.108.4):
+  ts-loader@9.6.2(loader-utils@2.0.4)(typescript@5.9.3)(webpack@5.108.4):
     dependencies:
       chalk: 4.1.2
-      enhanced-resolve: 5.20.0
-      micromatch: 4.0.8
-      semver: 7.7.4
+      picomatch: 4.0.4
       source-map: 0.7.6
       typescript: 5.9.3
       webpack: 5.108.4(webpack-cli@7.0.2)
+    optionalDependencies:
+      loader-utils: 2.0.4
 
   tslib@1.14.1: {}
 
