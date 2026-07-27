@@ -7,6 +7,8 @@ minimumReleaseAgeExclude:
   - uuid@14.0.0
   # Renovate security update: webpack-dev-server@5.2.6
   - webpack-dev-server@5.2.6
+  # Renovate security update: @babel/core@7.29.6
+  - "@babel/core@7.29.6"
 saveExact: true
 shamefullyHoist: true
 strictDepBuilds: true
