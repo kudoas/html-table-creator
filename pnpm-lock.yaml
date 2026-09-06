@@ -104,13 +104,13 @@ importers:
         version: 4.1.11(@types/node@24.10.1)(@vitest/coverage-v8@4.1.11)(jsdom@29.1.1)(vite@8.0.10(@types/node@24.10.1)(terser@5.44.1))
       webpack:
         specifier: 5.109.2
-        version: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
+        version: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
       webpack-cli:
-        specifier: 7.2.2
-        version: 7.2.2(json5@2.2.3)(webpack-dev-server@5.2.6)(webpack@5.109.2)
+        specifier: 7.2.3
+        version: 7.2.3(json5@2.2.3)(webpack-dev-server@5.2.6)(webpack@5.109.2)
       webpack-dev-server:
         specifier: 5.2.6
-        version: 5.2.6(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(webpack-cli@7.2.2)(webpack@5.109.2)
+        version: 5.2.6(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(webpack-cli@7.2.3)(webpack@5.109.2)
 
   tools:
     dependencies:
@@ -3218,14 +3218,14 @@ packages:
     resolution: {integrity: sha512-BMhLD/Sw+GbJC21C/UgyaZX41nPt8bUTg+jWyDeg7e7YN4xOM05YPSIXceACnXVtqyEw/LMClUQMtMZ+PGGpqQ==}
     engines: {node: '>=20'}
 
-  webpack-cli@7.2.2:
-    resolution: {integrity: sha512-lD0pALneslq8FfV+rwvm1BMW0AFAJrHHhNupAGN4asYjMvqrtRsenU4iKpiBo09gS4ntMxKGUxl9jhTEzVt0oA==}
+  webpack-cli@7.2.3:
+    resolution: {integrity: sha512-vDFU7jrfCctnN7jJQWPl+V26B51GLp11prVZXg50oeonsgeBzSTJEWmXkjHsOjTgMjlPOQM8GWLh33X9RN/0ow==}
     engines: {node: '>=20.9.0'}
     hasBin: true
     peerDependencies:
       js-yaml: ^4.0.0 || ^5.0.0
       json5: ^2.2.3
-      toml: ^3.0.0 || ^4.0.0
+      toml: ^3.0.0 || ^4.0.0 || ^5.0.0
       webpack: ^5.101.0
       webpack-bundle-analyzer: ^4.0.0 || ^5.0.0
       webpack-dev-server: ^5.0.0 || ^6.0.0
@@ -4621,7 +4621,7 @@ snapshots:
   '@testing-library/dom@10.1.0':
     dependencies:
       '@babel/code-frame': 7.29.7
-      '@babel/runtime': 7.29.2
+      '@babel/runtime': 7.29.7
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -4984,7 +4984,7 @@ snapshots:
       '@babel/core': 7.29.7(supports-color@8.1.1)
       find-up: 5.0.0
     optionalDependencies:
-      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
+      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
 
   babel-plugin-macros@3.1.0:
     dependencies:
@@ -5427,7 +5427,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
+      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
 
   fill-range@7.1.1:
     dependencies:
@@ -5555,7 +5555,7 @@ snapshots:
       pretty-error: 4.0.0
       tapable: 2.3.3
     optionalDependencies:
-      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
+      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
 
   htmlparser2@6.1.0:
     dependencies:
@@ -5900,7 +5900,7 @@ snapshots:
       jest-worker: 27.5.1
       schema-utils: 4.3.3
       terser: 5.44.1
-      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
+      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
     optionalDependencies:
       clean-css: 5.3.3
       html-minifier-terser: 6.1.0
@@ -6523,7 +6523,7 @@ snapshots:
       picomatch: 4.0.4
       source-map: 0.7.6
       typescript: 5.9.3
-      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
+      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
     optionalDependencies:
       loader-utils: 2.0.4
 
@@ -6574,7 +6574,7 @@ snapshots:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
+      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
     optionalDependencies:
       file-loader: 6.2.0(webpack@5.109.2)
 
@@ -6647,7 +6647,7 @@ snapshots:
 
   webidl-conversions@8.0.1: {}
 
-  webpack-cli@7.2.2(json5@2.2.3)(webpack-dev-server@5.2.6)(webpack@5.109.2):
+  webpack-cli@7.2.3(json5@2.2.3)(webpack-dev-server@5.2.6)(webpack@5.109.2):
     dependencies:
       '@discoveryjs/json-ext': 1.1.0
       commander: 14.0.3
@@ -6656,11 +6656,11 @@ snapshots:
       import-local: 3.2.0
       interpret: 3.1.1
       rechoir: 0.8.0
-      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
+      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
       webpack-merge: 6.0.1
     optionalDependencies:
       json5: 2.2.3
-      webpack-dev-server: 5.2.6(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(webpack-cli@7.2.2)(webpack@5.109.2)
+      webpack-dev-server: 5.2.6(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(webpack-cli@7.2.3)(webpack@5.109.2)
 
   webpack-dev-middleware@7.4.5(webpack@5.109.2):
     dependencies:
@@ -6671,9 +6671,9 @@ snapshots:
       range-parser: 1.2.1
       schema-utils: 4.3.3
     optionalDependencies:
-      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
+      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
 
-  webpack-dev-server@5.2.6(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(webpack-cli@7.2.2)(webpack@5.109.2):
+  webpack-dev-server@5.2.6(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(webpack-cli@7.2.3)(webpack@5.109.2):
     dependencies:
       '@types/bonjour': 3.5.13
       '@types/connect-history-api-fallback': 1.5.4
@@ -6704,8 +6704,8 @@ snapshots:
       webpack-dev-middleware: 7.4.5(webpack@5.109.2)
       ws: 8.18.3
     optionalDependencies:
-      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2)
-      webpack-cli: 7.2.2(json5@2.2.3)(webpack-dev-server@5.2.6)(webpack@5.109.2)
+      webpack: 5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3)
+      webpack-cli: 7.2.3(json5@2.2.3)(webpack-dev-server@5.2.6)(webpack@5.109.2)
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -6720,7 +6720,7 @@ snapshots:
 
   webpack-sources@3.5.1: {}
 
-  webpack@5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.2):
+  webpack@5.109.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.12)(webpack-cli@7.2.3):
     dependencies:
       '@types/estree': 1.0.8
       '@types/json-schema': 7.0.15
@@ -6743,7 +6743,7 @@ snapshots:
       watchpack: 2.5.2
       webpack-sources: 3.5.1
     optionalDependencies:
-      webpack-cli: 7.2.2(json5@2.2.3)(webpack-dev-server@5.2.6)(webpack@5.109.2)
+      webpack-cli: 7.2.3(json5@2.2.3)(webpack-dev-server@5.2.6)(webpack@5.109.2)
     transitivePeerDependencies:
       - '@minify-html/node'
       - '@swc/core'
