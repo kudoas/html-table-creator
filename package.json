@@ -47,7 +47,7 @@
     "vitest": "4.1.11",
     "webpack": "5.110.3",
     "webpack-cli": "7.2.3",
-    "webpack-dev-server": "5.2.6"
+    "webpack-dev-server": "6.0.0"
   },
   "packageManager": "pnpm@11.25.0"
 }
