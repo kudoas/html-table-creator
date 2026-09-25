@@ -49,5 +49,5 @@
     "webpack-cli": "7.2.3",
     "webpack-dev-server": "5.2.6"
   },
-  "packageManager": "pnpm@11.27.0"
+  "packageManager": "pnpm@12.5.1"
 }
