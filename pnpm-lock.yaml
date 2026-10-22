@@ -57,8 +57,8 @@ importers:
         specifier: 7.18.4
         version: 7.18.4(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react-share:
-        specifier: 5.3.0
-        version: 5.3.0(react@19.3.1)(supports-color@8.1.1)
+        specifier: 6.1.0
+        version: 6.1.0(react@19.3.1)
     devDependencies:
       '@babel/core':
         specifier: 7.29.7
@@ -2200,9 +2200,6 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  jsonp@0.2.1:
-    resolution: {integrity: sha512-pfog5gdDxPdV4eP7Kg87M8/bHgshlZ5pybl+yKxAnCZ5O7lCIn7Ixydj03wOlnDQesky2BPyA91SQ+5Y/mNwzw==}
-
   kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
@@ -2674,10 +2671,10 @@ packages:
       react-dom:
         optional: true
 
-  react-share@5.3.0:
-    resolution: {integrity: sha512-NU4TqizVi2TuyLpN93/ng2ux+uIGHK5b2dT15cHvZDwfi5b5NuzGych4htCGObN8lubygeamhRxUot4lZ0Pv6Q==}
+  react-share@6.1.0:
+    resolution: {integrity: sha512-5+do0CzuHxMTplqBLPFsnN8SQT+2Jf2AdLK0OJDXdd+/dSjzn0/a5CYVpxK3PI1HInspkLtreVGYlp2W8X9SjA==}
     peerDependencies:
-      react: ^17 || ^18 || ^19
+      react: ^18 || ^19
 
   react-transition-group@4.4.5:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
@@ -5719,12 +5716,6 @@ snapshots:
 
   json5@2.2.3: {}
 
-  jsonp@0.2.1(supports-color@8.1.1):
-    dependencies:
-      debug: 2.6.9(supports-color@8.1.1)
-    transitivePeerDependencies:
-      - supports-color
-
   kind-of@6.0.3: {}
 
   launch-editor@2.14.1:
@@ -6106,13 +6097,10 @@ snapshots:
     optionalDependencies:
       react-dom: 19.3.1(react@19.3.1)
 
-  react-share@5.3.0(react@19.3.1)(supports-color@8.1.1):
+  react-share@6.1.0(react@19.3.1):
     dependencies:
       classnames: 2.5.1
-      jsonp: 0.2.1(supports-color@8.1.1)
       react: 19.3.1
-    transitivePeerDependencies:
-      - supports-color
 
   react-transition-group@4.4.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
