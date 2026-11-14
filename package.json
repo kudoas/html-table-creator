@@ -22,7 +22,7 @@
     "@types/react-dom": "19.3.0",
     "@types/react-router-dom": "5.3.3",
     "common-tags": "1.8.2",
-    "hotkeys-js": "4.0.8",
+    "hotkeys-js": "4.1.2",
     "path": "0.12.7",
     "react": "19.3.1",
     "react-copy-to-clipboard": "5.1.1",
